@@ -16,7 +16,9 @@
 - The side door opened as Xu Ping left the lane at curfew. He did not look back and
   does not know whether he was seen.
 - Something is pressing on Xu Ping that he has not let himself name. The numbness
-  from the aconite outlasted five hours.
+  from the aconite outlasted five hours and then went, in the night, unmeasured.
+- Nine aconite roots, sliced, now two days dried instead of one. Untested. The batch
+  he judged at eleven counts is no longer the batch he judged.
 
 ## Closed
 - Where Guo Lan's cloth came from. The Geng house, hand to hand, not through the
