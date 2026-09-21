@@ -14,4 +14,11 @@ observed, not explained:
 - four liang of musk delivered every ninth day, ongoing.
 - a physician still attends, by carriage.
 - the dead man's silk robe went out to a seamstress to be cut down before he is
-  in the ground.
+  in the ground. (Plausibly explained: the household has lost three servants since
+  the death and is short of money.)
+- the physician who attends arrives and leaves empty-handed. No case, no boy. Stays
+  about two hours. Three visits since the death.
+- the mistress of the house has not been seen or heard since the first week.
+- at dusk the house smells of musk, mugwort smoke, and beneath those a green, cold
+  smell Xu Ping cannot name. It is strongest in the waste water leaving the east
+  gutter, and the water is warm.

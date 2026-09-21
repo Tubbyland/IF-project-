@@ -10,6 +10,9 @@ bad at: patients. Bored by common ailments, impatient with the people who have t
   His consultations have shrunk from an hour to a quarter of one; he would rather
   give five minutes. He calls this efficiency.
 
+  Eleven days ago he cut a blank slip and set it aside to write something on. It is
+  still blank. He has not looked at why.
+
 ## Carrying
 - a physician's roll: needles in a bamboo case, a small knife for cutting root
 - a bronze steelyard and weights, jin and liang
