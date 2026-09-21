@@ -10,8 +10,18 @@ bad at: patients. Bored by common ailments, impatient with the people who have t
   His consultations have shrunk from an hour to a quarter of one; he would rather
   give five minutes. He calls this efficiency.
 
-  Eleven days ago he cut a blank slip and set it aside to write something on. It is
-  still blank. He has not looked at why.
+  Eleven days ago a patient asked him something he has known since he was twenty,
+  and he had to look it up. That evening he cut a slip to open a case record on
+  himself, and it sat blank for eleven days, because opening one means taking a
+  history, and he does not give anyone an hour.
+
+  He has now taken it. Observed, in his own hand: belt in one notch since the ninth
+  month; appetite poor since autumn; sleep broken; winded on stairs. No pain, no
+  fever, no swelling, no cough, no blood, nothing on the skin. His own pulse reads
+  unremarkable and he does not trust himself to read his own wrist.
+  There is no finding. He is certain anyway, and has no evidence, and despises that
+  in other physicians.
+  The slip now carries one line: PATIENT WILL NOT SIT FOR THE HISTORY.
 
 ## Carrying
 - a physician's roll: needles in a bamboo case, a small knife for cutting root

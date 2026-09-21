@@ -15,8 +15,10 @@
   was carrying something wrapped.
 - The side door opened as Xu Ping left the lane at curfew. He did not look back and
   does not know whether he was seen.
-- Something is pressing on Xu Ping that he has not let himself name. The numbness
-  from the aconite outlasted five hours and then went, in the night, unmeasured.
+- Something is pressing on Xu Ping that he has not let himself name. He has now
+  taken his own history and it is unremarkable. He remains certain. Still no finding,
+  and no name — as with the green, and as with the word that would not arrive eleven
+  days ago.
 - Nine aconite roots, sliced, now two days dried instead of one. Untested. The batch
   he judged at eleven counts is no longer the batch he judged.
 
