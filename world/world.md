@@ -34,3 +34,5 @@ off the table: nothing declared. The player may add to this at any time without
 play style: two or three options and a "Something else?" at the close of a scene.
   When narrative energy flags, move in time or space rather than finishing a scene
   out of duty. Substantial scenes, not terse ones. Player steers as we go.
+  Stay inside the fiction. Xu Ping has interior thoughts — use them. Do not step
+  out to comment as narrator unless the player asks a direct question.
