@@ -2,17 +2,20 @@
 Watchman at the ward gate, fourth ward east of the West Market. Sixties. Sits all
 day out of the wind with a brazier he considers his personal property.
 
-stage: cracked
+stage: conflicted
 
 voice: circles back to his own feet from any subject in under three sentences.
 
-knows: that an old physician came asking about the Geng house and looked too long at
-  it. Believes him harmless — a tired old man who walked too far. Does NOT know he
-  followed a delivery there. Does NOT know his name, and did not think to ask.
+knows: Xu Ping's name, trade, and that he knocked at the Geng gate at the second
+  drum and was refused. Knows he is not a harmless confused old man and let him back
+  into the ward anyway. Does NOT know about the musk, Ji Wan, or Guo Lan.
+  Knows his own heart is failing, because Xu Ping told him.
 
 owes/owed: Xu Ping told him plainly what the swelling in his ankles means and what
   to do about it, and took nothing for it.
 
-toward player: warm. The first person in a year to tell him the truth about his legs.
+toward player: warm, and now uneasy with it. Has worked out that helping means
+  informing on a household in his own ward, and said so out loud. Will still talk.
+  Will not be asked to watch and report.
 
-last seen: his gate, the day the aconite was cut.
+last seen: his brazier, through the night, after the second drum.

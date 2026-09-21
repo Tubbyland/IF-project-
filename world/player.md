@@ -32,7 +32,9 @@ floorboard of the stall. Not poverty. Not one bad season from safety either.
 - reading and copying texts: skilled — he has copied more than he has been taught
 - needling: capable — competent, uninterested; he is a drug man
 - market trade and haggling: capable — necessity, not talent
-- sitting with the frightened: unpracticed — he has never once tried
+- sitting with the frightened: capable — a night at a brazier, asked by a watchman
+  how long he had, and he stayed and answered the true question instead of the
+  asked one
 
 ## Known by
 - West Market: a good physician who does not like you. People come anyway.

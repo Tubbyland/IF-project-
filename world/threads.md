@@ -9,6 +9,10 @@
 - What was the fourth thing in the cloth? Xu Ping could not name it. Tang, who has
   no training, called it green. It is in the Geng house's waste water.
 - Who is the physician who visits the Geng house empty-handed and stays two hours?
+  He began coming AFTER the death. No physician was called on the night Geng Su died.
+- In his last two months Geng Su grew thin, stopped riding, and left the ward five
+  or six times before the dawn drum, returning before the household woke. Once he
+  was carrying something wrapped.
 - The side door opened as Xu Ping left the lane at curfew. He did not look back and
   does not know whether he was seen.
 - Something is pressing on Xu Ping that he has not let himself name. The numbness

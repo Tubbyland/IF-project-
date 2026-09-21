@@ -19,6 +19,10 @@ observed, not explained:
 - the physician who attends arrives and leaves empty-handed. No case, no boy. Stays
   about two hours. Three visits since the death.
 - the mistress of the house has not been seen or heard since the first week.
+- eight or nine empty jars stacked in the courtyard: squat, grey, wrong at the neck,
+  sealed with waxed cord in a knot Xu Ping does not know. Not a vessel used in this
+  city.
+- Steward Pei's first words at the gate were "Did he send you?"
 - at dusk the house smells of musk, mugwort smoke, and beneath those a green, cold
   smell Xu Ping cannot name. It is strongest in the waste water leaving the east
   gutter, and the water is warm.
