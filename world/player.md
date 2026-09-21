@@ -20,10 +20,13 @@ bad at: patients. Bored by common ailments, impatient with the people who have t
 - mugwort punk for moxa, wrapped in oiled cloth
 - a bundle of wooden slips, corded, in his own hand — forty years of case notes
 - a brush, ink cake, water dropper
+- two zhu of musk, corded in Ji Wan's paper, unopened
 
 ## Money
-a little over two thousand coins, in strings and a loose handful, under the
-floorboard of the stall. Not poverty. Not one bad season from safety either.
+a little over seventeen hundred coins under the floorboard of the stall. Was a
+little over two thousand until he paid Ji Wan three hundred and twenty for two zhu
+of musk he did not need. Not poverty. Not one bad season from safety either.
+A day's takings lost to the shutter being down.
 
 ## Skills
 <!-- name: unpracticed | capable | skilled | expert — what earned the last promotion -->
