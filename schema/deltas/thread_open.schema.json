@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/thread_open.schema.json",
+  "title": "thread_open",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "A thread opens.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "id",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "thread_open"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

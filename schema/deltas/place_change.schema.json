@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/place_change.schema.json",
+  "title": "place_change",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "A location changes permanently.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "place",
+    "changed"
+  ],
+  "properties": {
+    "place": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "changed": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "place_change"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

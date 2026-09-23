@@ -1,0 +1,27 @@
+{
+  "description": "Drug merchant, the sellers' row, West Market. Fifties. The largest stock in the ward — three times Xu Ping's frontage, drawers to the roof, two boys running for him.",
+  "id": "ji-wan",
+  "knows": [
+    "that Xu Ping broke three years of silence to walk into his stall and buy musk",
+    "that Xu Ping said the price seemed low"
+  ],
+  "last_seen": "his stall, the day the aconite was cut",
+  "name": "Ji Wan",
+  "not_knows": [
+    "why Xu Ping came",
+    "about Guo Lan",
+    "about the robe",
+    "about the fourth smell",
+    "that Xu Ping followed the delivery boy"
+  ],
+  "observed_not_explained": [
+    "Holds musk in quantity during a shortage the perfumers have complained of all winter.",
+    "Prices it at 320 for two zhu — a good year's price, not a famine price.",
+    "The grade is better than any Xu Ping has handled in forty years.",
+    "Keeps a standing order under a mark rather than a name: two short strokes and a hook."
+  ],
+  "owes_owed": [],
+  "stage": "resistant",
+  "toward_player": "Has not forgiven him. Three years ago Xu Ping said out loud, in the row, in front of customers, that Ji Wan's aconite was under-processed. It was. Being right is the part that has not been forgiven.",
+  "voice": "Never looks at his hands while they work. Weighs, wraps, cords and knots the packet with his eyes on your face the whole time. Courteous in a way that is worse than being insulted."
+}

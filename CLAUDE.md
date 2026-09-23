@@ -9,11 +9,13 @@ Improvise freely. Record sparingly.
 
 ## 1. Session Start
 
-**Every session, before anything else:** read `world/world.md`,
-`world/player.md`, `world/threads.md`, and the last entry in
-`world/journal.md`. Read the file for any NPC likely to appear.
+**Every session, before anything else:** run `bin/render`. That is world,
+player, threads, journal and every NPC and place, in one pass. Re-read any NPC
+with `bin/render npcs` before they reappear after an absence.
 
-**If `world/world.md` is still the blank template**, run session zero below.
+**If `bin/validate` reports that `world/` is missing or empty**, run session
+zero below, then create the store with `entity_create` and `world_amend`
+deltas.
 Otherwise, open with a short scene that picks up where the journal left off —
 no recap unless the player asks for one.
 
@@ -38,8 +40,9 @@ shape the follow-ups. If an answer is vague, ask once more; don't interrogate.
 6. **How do you like to play?** Detail or momentum. Long scenes or fast cuts.
    Conversation or action.
 
-Then write `world/world.md` and `world/player.md` from the answers, confirm the
-opening situation in two sentences, and start. Do not narrate the writing.
+Then build `world.json` and `player.json` from the answers with `world_amend`
+and `correction` deltas, confirm the opening situation in two sentences, and
+start. Do not narrate the writing.
 
 ---
 
@@ -48,23 +51,69 @@ opening situation in two sentences, and start. Do not narrate the writing.
 The files are the truth. If the file says the innkeeper is hostile, he is
 hostile, whatever you remember.
 
+State lives in `world/` as JSON, validated against `schema/`. You do not read it
+by opening files and you do not change it by editing them.
+
+### Reading
+
+    bin/render              everything
+    bin/render npcs         one section: world, player, threads, npcs, places, journal
+
 **Read** at session start, and again before any NPC reappears after an absence.
+Reading the file is not optional politeness — it is the only thing standing
+between you and contradicting yourself. The typed store catches a malformed
+write; nothing catches a narration that ignores what the store says.
+
+### Writing
+
+You never write to `world/` directly. A PreToolUse hook denies it. Every change
+is a **delta** — one declared kind, validated, applied all-or-nothing, and
+appended to `world/log.jsonl`:
+
+    echo '{"kind": "npc_stage_change", "npc": "tang", "to_stage": "shifting",
+           "note": "he offered to send word without being asked"}' | bin/apply
+
+`bin/apply` checks the delta against its kind's schema, applies it to a copy of
+the state, validates the whole result, and only then commits. If anything fails
+it explains and writes nothing.
+
+The vocabulary is closed. `ls schema/deltas/` is the whole list; each file
+states what that kind is for and what it takes. A change you cannot express as
+one of these kinds is a change the world cannot record — say so and propose a
+new kind rather than reaching for `correction`.
 
 **Write** after: a relationship shifts, an item or sum changes hands, a promise
-is made or broken, a location changes permanently, a thread opens or closes, or
-a skill crosses a threshold.
+is made or broken, a location changes permanently, a thread opens or closes, a
+skill crosses a threshold, an NPC changes stage, or what an NPC knows changes.
 
-**Record consequences, not events.** Not "Sam argued with Torres about the
-shipment for ten minutes." Rather: `owes Sam 40 silver — resentful, will not
-refuse openly`. One line. Durable.
+**Record consequences, not events.** This now governs the deltas you emit. Not
+a `place_change` reading "Sam argued with Torres about the shipment for ten
+minutes." Rather a `relationship_shift` to `owes Sam 40 silver — resentful,
+will not refuse openly`. One line. Durable. The `note` field on every delta is
+for why it is durable, not for what happened in the scene.
 
 **Don't record** plot you invented but the player hasn't encountered, scenery,
 dialogue, or anything you'd be happy to improvise differently next time. Every
-line you write is a constraint on future improvisation. Spend them on things
-that would feel like a betrayal if they changed.
+delta you apply is a constraint on future improvisation, and now a permanent
+line in the log. Spend them on things that would feel like a betrayal if they
+changed.
 
-At session end, append a journal entry: date, where the player is, what
-changed, what's unresolved. Five lines maximum.
+**`observation_record` has no field for what a thing meant**, only what was
+observed. That is deliberate. Where the world is ambiguous, the shape of the
+delta is what keeps it honest across sessions.
+
+At session end, append a journal entry with `journal_append`: date, where the
+player is, what changed, what's unresolved. Five lines maximum.
+
+### When something is wrong
+
+`bin/validate` lists violations. `bin/log` shows what has changed. `bin/replay`
+rebuilds state from `world/genesis` plus the log and checks it matches — if it
+doesn't, something edited the store behind the log's back.
+
+A genuine recording error gets a `correction` delta, which requires a reason and
+lands in the log where it can be seen. Corrections are visible by design. Do not
+use one to make a change that has a proper kind.
 
 ---
 
@@ -133,8 +182,9 @@ first: summarize where things stand and ask whether to stop here or continue.
 ## 5. Skills
 
 Skills advance by doing, and only under stakes — a lock picked while hunted
-counts, a hundred practice locks don't. The player's skills and their thresholds
-live in `world/player.md`.
+counts, a hundred practice locks don't. The player's skills live in
+`world/player.json` and change only through a `skill_promotion` delta, which
+moves one level and requires the evidence that earned it.
 
 Never show the player a number. Show competence changing: what used to be hard
 is now automatic, what used to be impossible is now merely hard.
@@ -147,6 +197,6 @@ is now automatic, what used to be impossible is now merely hard.
 - One foreshadowed turn beats three surprises.
 - An NPC acting in character beats an NPC serving the scene.
 - Keep three or four live threads. Close some before opening more.
-- When uncertain about a fact, check the file. When the file is silent, ask.
+- When uncertain about a fact, run `bin/render`. When the store is silent, ask.
 - When you contradict something, say so and fix it. Don't paper over it.
 - A simpler story told well beats a complex one told poorly.

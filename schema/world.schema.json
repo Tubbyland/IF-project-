@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "world.schema.json",
+  "title": "World",
+  "description": "Written once in session zero, edited rarely. Everything here is binding.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "setting",
+    "era",
+    "scale",
+    "tone",
+    "what_can_exist",
+    "off_the_table",
+    "play_style"
+  ],
+  "properties": {
+    "setting": {
+      "type": "string",
+      "minLength": 1
+    },
+    "era": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tone": {
+      "type": "string",
+      "minLength": 1
+    },
+    "what_can_exist": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "rules"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "materialist",
+            "ambiguous",
+            "operative"
+          ],
+          "description": "Settled in session zero. Binding: cannot change."
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "cost": {
+          "type": "string"
+        }
+      }
+    },
+    "established_frame": {
+      "type": "string",
+      "description": "What is true and not in question, e.g. the period's medicine."
+    },
+    "off_the_table": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "play_style": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

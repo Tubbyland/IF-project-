@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+"""Replay world/genesis + world/log.jsonl and compare with world/.
+
+Proves the log plus the initial state are sufficient to reach current state.
+Writes nothing.
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _state  # noqa: E402
+
+
+def main(argv):
+    if not os.path.isdir(_state.GENESIS):
+        print("no world/genesis snapshot", file=sys.stderr)
+        return 2
+    state = _state.load_state(_state.GENESIS)
+    print("genesis      %s" % _state.state_hash(state))
+    entries = _state.read_log()
+    for e in entries:
+        try:
+            state = _state.apply_delta(state, e["delta"])
+        except _state.DeltaError as err:
+            print("replay failed at #%d (%s): %s" % (e["seq"], e["kind"], err),
+                  file=sys.stderr)
+            return 1
+        got = _state.state_hash(state)
+        if got != e["state_hash"]:
+            print("state hash mismatch after #%d (%s)\n  logged %s\n  replay %s"
+                  % (e["seq"], e["kind"], e["state_hash"], got), file=sys.stderr)
+            return 1
+        print("#%-4d %-20s %s" % (e["seq"], e["kind"], got))
+    current = _state.load_state()
+    if _state.state_hash(state) != _state.state_hash(current):
+        print("replayed state does not match world/\n  replay  %s\n  current %s"
+              % (_state.state_hash(state), _state.state_hash(current)),
+              file=sys.stderr)
+        return 1
+    print("\nreplay matches world/ after %d delta%s: %s"
+          % (len(entries), "" if len(entries) == 1 else "s",
+             _state.state_hash(state)))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "player.schema.json",
+  "title": "Player",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "situation",
+    "wants",
+    "bad_at",
+    "carrying",
+    "money",
+    "skills",
+    "known_by"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "situation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wants": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "undetermined"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "undetermined": {
+          "type": "boolean",
+          "description": "True means no answer is held in reserve by anyone."
+        }
+      }
+    },
+    "bad_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "carrying": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "money": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Coins. Only money_change and correction may alter it."
+    },
+    "money_note": {
+      "type": "string"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "level",
+          "evidence"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "level": {
+            "enum": [
+              "unpracticed",
+              "capable",
+              "skilled",
+              "expert"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The moment that earned the last promotion."
+          }
+        }
+      }
+    },
+    "known_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "observed_not_explained": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "What was observed. Never what it meant."
+    }
+  }
+}

@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Apply one delta, read as JSON on stdin.
+
+Validates the delta against its kind's schema, applies it to a copy of the
+state, validates the result, and only then writes anything. On any failure it
+explains and changes nothing.
+"""
+import json
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _state  # noqa: E402
+
+
+def fail(msg):
+    print("REFUSED: " + msg, file=sys.stderr)
+    print("Nothing was written.", file=sys.stderr)
+    return 1
+
+
+def main(argv):
+    raw = sys.stdin.read().strip()
+    if not raw:
+        return fail("no delta on stdin.\nKnown kinds:\n  %s"
+                    % "\n  ".join(_state.known_kinds()))
+    try:
+        delta = json.loads(raw)
+    except json.JSONDecodeError as e:
+        return fail("stdin is not valid JSON: %s" % e)
+
+    try:
+        state = _state.load_state()
+    except Exception as e:
+        return fail("cannot load world/: %s" % e)
+
+    before = _state.validate_state(state)
+    if before:
+        return fail("world/ is already invalid; fix it before applying deltas:\n  %s"
+                    % "\n  ".join(before))
+
+    try:
+        new_state = _state.apply_delta(state, delta)
+    except _state.DeltaError as e:
+        return fail(str(e))
+
+    after = _state.validate_state(new_state)
+    if after:
+        return fail("the resulting state would be invalid:\n  %s"
+                    % "\n  ".join(after))
+
+    try:
+        log = _state.read_log()
+        entry = _state.commit(new_state, delta, log)
+    except Exception as e:
+        return fail("commit failed and was rolled back: %s" % e)
+
+    print("applied #%d %s" % (entry["seq"], entry["kind"]))
+    print("  delta %s" % entry["delta_hash"][:12])
+    print("  state %s" % entry["state_hash"][:12])
+    if "--print" in argv:
+        print(json.dumps(new_state, indent=2, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

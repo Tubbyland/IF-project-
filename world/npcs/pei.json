@@ -1,0 +1,22 @@
+{
+  "description": "Steward of the Geng house. Forties, grey at the temple. Twenty years with the family. The face of a man who has slept in pieces for six weeks. Tang: \"the look of a man carrying a table on his own.\"",
+  "id": "pei",
+  "knows": [
+    "Xu Ping's name and trade",
+    "that Xu Ping can smell something from the gutter he cannot name — Xu Ping told him all of it, at the gate, truthfully"
+  ],
+  "last_seen": "his own doorway, at the second drum",
+  "name": "Pei",
+  "not_knows": [
+    "that he followed the musk delivery",
+    "that he spoke to Tang",
+    "that he knelt at the east wall"
+  ],
+  "observed_not_explained": [
+    "Before refusing, before asking anything else, he said: \"Did he send you?\""
+  ],
+  "owes_owed": [],
+  "stage": "resistant",
+  "toward_player": "Refused him at the gate and barred it. Not hostile. Rehearsed.",
+  "voice": "Says \"the house\" where another man would say we, or the family. Never opens a door more than the width of his own shoulder."
+}

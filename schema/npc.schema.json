@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "npc.schema.json",
+  "title": "NPC",
+  "description": "The load-bearing file. knows/not_knows is the one to get right.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "description",
+    "stage",
+    "voice",
+    "knows",
+    "not_knows",
+    "toward_player"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Role, place, one physical detail."
+    },
+    "stage": {
+      "enum": [
+        "resistant",
+        "cracked",
+        "conflicted",
+        "shifting",
+        "changed"
+      ]
+    },
+    "voice": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One rhythm or verbal habit, not a description."
+    },
+    "knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "not_knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "description": "Written explicitly. The negatives matter most."
+    },
+    "owes_owed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "toward_player": {
+      "type": "string",
+      "minLength": 1
+    },
+    "promises": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "what",
+          "state"
+        ],
+        "properties": {
+          "what": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "made",
+              "kept",
+              "broken"
+            ]
+          },
+          "by": {
+            "enum": [
+              "player",
+              "npc"
+            ]
+          }
+        }
+      }
+    },
+    "last_seen": {
+      "type": "string"
+    },
+    "observed_not_explained": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

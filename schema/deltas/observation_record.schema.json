@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/observation_record.schema.json",
+  "title": "observation_record",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "Record something observed. There is deliberately no field for what it meant - the world's recording rule is enforced by the shape of this delta. world.json takes no observations; it holds binding rules only.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "target_type",
+    "observation"
+  ],
+  "properties": {
+    "target_type": {
+      "enum": [
+        "player",
+        "npc",
+        "place"
+      ]
+    },
+    "target_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "observation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "observation_record"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/entity_create.schema.json",
+  "title": "entity_create",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "Bring an NPC, place or thread into existence. The section 3 list assumes entities already exist; nothing there can create one.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "entity",
+    "body"
+  ],
+  "properties": {
+    "entity": {
+      "enum": [
+        "npc",
+        "place",
+        "thread"
+      ]
+    },
+    "body": {
+      "type": "object"
+    },
+    "kind": {
+      "const": "entity_create"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

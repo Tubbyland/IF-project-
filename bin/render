@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""Print world/ as readable text. This is how state is read."""
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _state  # noqa: E402
+
+W = 78
+
+
+def head(s):
+    print("\n" + s)
+    print("=" * min(len(s), W))
+
+
+def sub(s):
+    print("\n" + s)
+    print("-" * min(len(s), W))
+
+
+def field(label, value, indent=2):
+    pad = " " * indent
+    if value is None or value == "" or value == []:
+        return
+    if isinstance(value, list):
+        print("%s%s:" % (pad, label))
+        for v in value:
+            print("%s  - %s" % (pad, v))
+    elif not label:
+        for line in str(value).splitlines():
+            print("%s%s" % (pad, line))
+    else:
+        text = str(value)
+        if "\n" in text:
+            print("%s%s:" % (pad, label))
+            for line in text.splitlines():
+                print("%s  %s" % (pad, line))
+        else:
+            print("%s%s: %s" % (pad, label, text))
+
+
+def main(argv):
+    only = argv[1] if len(argv) > 1 else None
+    state = _state.load_state()
+
+    if only in (None, "world"):
+        w = state["world"]
+        head("WORLD")
+        for k in ("setting", "era", "scale", "tone"):
+            field(k, w.get(k))
+        wce = w.get("what_can_exist", {})
+        field("what can exist", wce.get("mode"))
+        field("rules", wce.get("rules"))
+        field("cost", wce.get("cost"))
+        field("established frame", w.get("established_frame"))
+        field("off the table", w.get("off_the_table") or ["(nothing declared)"])
+        field("play style", w.get("play_style"))
+
+    if only in (None, "player"):
+        p = state["player"]
+        head("PLAYER — %s" % p["name"])
+        field("situation", p.get("situation"))
+        wants = p.get("wants", {})
+        field("wants", wants.get("text"))
+        if wants.get("undetermined"):
+            field("", "[UNDETERMINED — no answer held in reserve]")
+        field("bad at", p.get("bad_at"))
+        field("money", "%d coins" % p.get("money", 0))
+        field("", p.get("money_note"))
+        field("carrying", p.get("carrying"))
+        print("  skills:")
+        for s in p.get("skills", []):
+            print("    - %s: %s — %s" % (s["name"], s["level"], s["evidence"]))
+        field("known by", p.get("known_by"))
+        field("observed, not explained", p.get("observed_not_explained"))
+
+    if only in (None, "threads"):
+        head("THREADS")
+        for st in ("open", "closed"):
+            rows = [t for t in state["threads"].values() if t["state"] == st]
+            sub("%s (%d)" % (st, len(rows)))
+            for t in sorted(rows, key=lambda t: t["id"]):
+                print("  [%s] %s" % (t["id"], t["summary"]))
+                if t.get("resolution"):
+                    print("        -> %s" % t["resolution"])
+
+    if only in (None, "npcs"):
+        head("NPCS")
+        for n in sorted(state["npcs"].values(), key=lambda n: n["id"]):
+            sub("%s  (%s)  [%s]" % (n["name"], n["stage"], n["id"]))
+            field("", n.get("description"))
+            field("voice", n.get("voice"))
+            field("knows", n.get("knows"))
+            field("does NOT know", n.get("not_knows"))
+            field("owes/owed", n.get("owes_owed"))
+            field("toward player", n.get("toward_player"))
+            for p in n.get("promises", []):
+                print("  promise (%s): %s" % (p["state"], p["what"]))
+            field("last seen", n.get("last_seen"))
+            field("observed, not explained", n.get("observed_not_explained"))
+
+    if only in (None, "places"):
+        head("PLACES")
+        for pl in sorted(state["places"].values(), key=lambda p: p["id"]):
+            sub("%s  [%s]" % (pl["name"], pl["id"]))
+            field("", pl.get("description"))
+            field("controlled by", pl.get("controlled_by"))
+            field("changed", pl.get("changed"))
+            field("hidden here", pl.get("hidden"))
+            field("observed, not explained", pl.get("observed_not_explained"))
+
+    if only in (None, "journal"):
+        head("JOURNAL")
+        entries = state["journal"].get("entries", [])
+        if not entries:
+            print("  (no entries)")
+        for e in entries:
+            sub(e["date"])
+            field("where", e["where"])
+            field("changed", e["changed"])
+            field("unresolved", e["unresolved"])
+            field("promised, unpaid", e.get("promised_unpaid"))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv))

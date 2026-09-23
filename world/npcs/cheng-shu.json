@@ -1,0 +1,22 @@
+{
+  "description": "Second-hand clothes dealer, third stall in the north lane, West Market. Past seventy.",
+  "id": "cheng-shu",
+  "knows": [
+    "that Xu Ping is chasing a silk robe that smells of a prescription",
+    "that musk is involved",
+    "that he was the one who told him Ji Wan has musk"
+  ],
+  "last_seen": "his stall, the morning he cut the aconite",
+  "name": "Cheng Shu",
+  "not_knows": [
+    "about the Geng house",
+    "about Guo Lan by name"
+  ],
+  "observed_not_explained": [
+    "Says no silk of that grade passes through the second-hand lane at all, and he would have costed it if it had."
+  ],
+  "owes_owed": [],
+  "stage": "cracked",
+  "toward_player": "Amused by him. Enjoys being consulted. No loyalty either way.",
+  "voice": "Prices things aloud whether or not they are for sale. Not a tactic — a condition. Valued Xu Ping's own robe twice in one conversation."
+}

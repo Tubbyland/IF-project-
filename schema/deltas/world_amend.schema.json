@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/world_amend.schema.json",
+  "title": "world_amend",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "Amend world.json. Binding fields (what_can_exist, off_the_table) require player_approved true, which is CLAUDE.md's 'ask the player first' in code.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "field",
+    "value"
+  ],
+  "properties": {
+    "field": {
+      "enum": [
+        "setting",
+        "era",
+        "scale",
+        "tone",
+        "established_frame",
+        "off_the_table",
+        "play_style",
+        "what_can_exist"
+      ]
+    },
+    "value": {},
+    "player_approved": {
+      "type": "boolean"
+    },
+    "kind": {
+      "const": "world_amend"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

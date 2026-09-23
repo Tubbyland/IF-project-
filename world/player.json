@@ -1,0 +1,68 @@
+{
+  "bad_at": "Patients. Bored by common ailments, impatient with the people who have them. His consultations have shrunk from an hour to a quarter of one; he would rather give five minutes. He calls this efficiency.",
+  "carrying": [
+    "a physician's roll: needles in a bamboo case, a small knife for cutting root",
+    "a bronze steelyard and weights, jin and liang",
+    "mortar, pestle, three sieves of different mesh",
+    "mugwort punk for moxa, wrapped in oiled cloth",
+    "a bundle of wooden slips, corded, in his own hand — forty years of case notes",
+    "a brush, ink cake, water dropper",
+    "two zhu of musk, corded in Ji Wan's paper, unopened"
+  ],
+  "known_by": [
+    "West Market: a good physician who does not like you. People come anyway."
+  ],
+  "money": 1700,
+  "money_note": "Under the floorboard of the stall. Was a little over two thousand until he paid Ji Wan three hundred and twenty for two zhu of musk he did not need. Two days' takings lost to the shutter being down. Not poverty. Not one bad season from safety either.",
+  "name": "Xu Ping (徐平) — roughly *shü ping*",
+  "observed_not_explained": [
+    "Eleven days ago a patient asked him something he has known since he was twenty, and he had to look it up. It took forty heartbeats. She did not notice.",
+    "That evening he cut a slip to open a case record on himself. It sat blank for eleven days.",
+    "Belt in one notch since the ninth month.",
+    "Appetite poor since autumn. Hunger returned the evening he woke from sleeping a day.",
+    "Sleep broken.",
+    "Winded on the lane by the well, and again on the avenue.",
+    "No pain, no fever, no swelling, no cough, no blood, nothing on the skin.",
+    "His own pulse reads a little slow and a little thin, unremarkable for his age. He does not trust himself to read his own wrist.",
+    "The numbness from the aconite outlasted five hours and was gone by morning, unmeasured.",
+    "The slip now carries one line: PATIENT WILL NOT SIT FOR THE HISTORY.",
+    "Nine aconite roots, sliced, now two days dried instead of one. Untested. The batch he judged at eleven counts is no longer the batch he judged."
+  ],
+  "situation": "Early sixties. Keeps a physician's stall in the West Market, Chang'an. His own man, barely. Mostly a loner.",
+  "skills": [
+    {
+      "evidence": "can name a decoction's ingredients by smell alone",
+      "level": "expert",
+      "name": "materia medica"
+    },
+    {
+      "evidence": "forty years of wrists",
+      "level": "skilled",
+      "name": "pulse diagnosis"
+    },
+    {
+      "evidence": "he has copied more than he has been taught",
+      "level": "skilled",
+      "name": "reading and copying texts"
+    },
+    {
+      "evidence": "competent, uninterested; he is a drug man",
+      "level": "capable",
+      "name": "needling"
+    },
+    {
+      "evidence": "necessity, not talent",
+      "level": "capable",
+      "name": "market trade and haggling"
+    },
+    {
+      "evidence": "a night at a brazier, asked by a watchman how long he had, and he stayed and answered the true question instead of the asked one",
+      "level": "capable",
+      "name": "sitting with the frightened"
+    }
+  ],
+  "wants": {
+    "text": "Something is pressing and he has not let himself name it. What it turns out to be gets built out of what he does about it.",
+    "undetermined": true
+  }
+}

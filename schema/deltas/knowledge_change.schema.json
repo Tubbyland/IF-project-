@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/knowledge_change.schema.json",
+  "title": "knowledge_change",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "What an NPC knows and does not know. SCHEMA.md calls this the one to get right; the section 3 list has no kind for it.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "npc"
+  ],
+  "properties": {
+    "npc": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "add_knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "add_not_knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "remove_knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "remove_not_knows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "kind": {
+      "const": "knowledge_change"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

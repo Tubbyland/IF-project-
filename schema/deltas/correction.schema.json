@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/correction.schema.json",
+  "title": "correction",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "Fix a recording error. Deliberately explicit and logged, so corrections are visible in the log rather than silent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "path",
+    "value",
+    "reason"
+  ],
+  "properties": {
+    "path": {
+      "type": "string",
+      "pattern": "^(world|player|journal|npcs\\.[a-z0-9-]+|places\\.[a-z0-9-]+|threads\\.[a-z0-9-]+)(\\.[A-Za-z_][A-Za-z0-9_]*)*$"
+    },
+    "value": {},
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "correction"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "kinds": [
+    "correction",
+    "entity_create",
+    "item_change",
+    "journal_append",
+    "knowledge_change",
+    "money_change",
+    "npc_stage_change",
+    "observation_record",
+    "place_change",
+    "promise",
+    "relationship_shift",
+    "skill_promotion",
+    "thread_close",
+    "thread_open",
+    "world_amend"
+  ]
+}

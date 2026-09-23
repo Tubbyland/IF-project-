@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/money_change.schema.json",
+  "title": "money_change",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "A sum changes hands. Signed; applied arithmetically so the balance cannot drift.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "amount",
+    "reason"
+  ],
+  "properties": {
+    "amount": {
+      "type": "integer",
+      "not": {
+        "const": 0
+      }
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "money_change"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

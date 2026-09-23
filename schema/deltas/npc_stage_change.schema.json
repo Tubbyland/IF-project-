@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/npc_stage_change.schema.json",
+  "title": "npc_stage_change",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "An NPC moves stage. One step, either direction — backsliding is allowed.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "npc",
+    "to_stage"
+  ],
+  "properties": {
+    "npc": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "to_stage": {
+      "enum": [
+        "resistant",
+        "cracked",
+        "conflicted",
+        "shifting",
+        "changed"
+      ]
+    },
+    "kind": {
+      "const": "npc_stage_change"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

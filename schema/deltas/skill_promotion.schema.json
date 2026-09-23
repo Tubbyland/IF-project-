@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/skill_promotion.schema.json",
+  "title": "skill_promotion",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "A skill crosses a threshold. One level per delta; evidence is required.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "skill",
+    "to_level",
+    "evidence"
+  ],
+  "properties": {
+    "skill": {
+      "type": "string",
+      "minLength": 1
+    },
+    "to_level": {
+      "enum": [
+        "unpracticed",
+        "capable",
+        "skilled",
+        "expert"
+      ]
+    },
+    "evidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "skill_promotion"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

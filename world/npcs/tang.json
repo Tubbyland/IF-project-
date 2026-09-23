@@ -1,0 +1,34 @@
+{
+  "description": "Watchman at the ward gate, fourth ward east of the West Market. Sixties. Sits all day out of the wind with a brazier he considers his personal property.",
+  "id": "tang",
+  "knows": [
+    "Xu Ping's name and trade",
+    "that he knocked at the Geng gate at the second drum and was refused",
+    "that he is not a harmless confused old man, and let him back into the ward anyway",
+    "that his own heart is failing, because Xu Ping told him plainly"
+  ],
+  "last_seen": "his brazier, through the night, after the second drum",
+  "name": "Tang",
+  "not_knows": [
+    "about the musk",
+    "about Ji Wan",
+    "about Guo Lan",
+    "that Xu Ping knelt at the Geng east wall and put his hands in the gutter"
+  ],
+  "observed_not_explained": [
+    "Set out a second stool before being asked."
+  ],
+  "owes_owed": [
+    "Xu Ping told him what the swelling in his ankles means and what to do about it, and took nothing for it"
+  ],
+  "promises": [
+    {
+      "by": "player",
+      "state": "made",
+      "what": "if it comes to pain at the end, Xu Ping will see that it does not hurt"
+    }
+  ],
+  "stage": "conflicted",
+  "toward_player": "Warm, and now uneasy with it. Has worked out that helping means informing on a household in his own ward, and said so out loud. Will still talk. Will not be asked to watch and report.",
+  "voice": "Circles back to his own feet from any subject in under three sentences."
+}

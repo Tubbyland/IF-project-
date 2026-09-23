@@ -1,0 +1,25 @@
+{
+  "description": "Seamstress, West Market ward. Mid-thirties, thin through the shoulders. Flattened fingerpads, callus at the base of the middle finger.",
+  "id": "guo-lan",
+  "knows": [
+    "that Xu Ping took an unusual interest in her sleeve and did not say why",
+    "that she has an ordinary cough, which she has",
+    "that she is to come back in ten days"
+  ],
+  "last_seen": "his stall, the morning he cut the aconite",
+  "name": "Guo Lan",
+  "not_knows": [
+    "that he can name a decoction by smell",
+    "that anything about the cloth is considered wrong",
+    "that he added good cinnamon she could not have paid for"
+  ],
+  "observed_not_explained": [
+    "Her sleeves carry liquorice, cinnamon bark of good grade, and musk. And a fourth thing he could not name."
+  ],
+  "owes_owed": [
+    "paid in full for the cough remedy — apricot kernel, liquorice"
+  ],
+  "stage": "resistant",
+  "toward_player": "Wary-polite. Will not name who gave her the private sewing work. Stated fear: her shop master, Dou, learning she takes side work, and the work stopping.",
+  "voice": "Answers the exact question and nothing adjacent. Apologises when she is not sorry. Goes quiet rather than refuse outright."
+}

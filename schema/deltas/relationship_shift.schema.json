@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/relationship_shift.schema.json",
+  "title": "relationship_shift",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "A relationship shifts. Replaces the NPC's toward_player line.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "npc",
+    "toward_player"
+  ],
+  "properties": {
+    "npc": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "toward_player": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "relationship_shift"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

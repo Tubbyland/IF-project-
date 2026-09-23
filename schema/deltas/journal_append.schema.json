@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/journal_append.schema.json",
+  "title": "journal_append",
+  "x-origin": "added: not expressible in the section 3 trigger list",
+  "description": "Append a session entry. Append-only; past entries are never rewritten.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "entry"
+  ],
+  "properties": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "where",
+        "changed",
+        "unresolved"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "where": {
+          "type": "string",
+          "minLength": 1
+        },
+        "changed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unresolved": {
+          "type": "string",
+          "minLength": 1
+        },
+        "promised_unpaid": {
+          "type": "string"
+        }
+      }
+    },
+    "kind": {
+      "const": "journal_append"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

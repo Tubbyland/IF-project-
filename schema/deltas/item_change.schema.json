@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/item_change.schema.json",
+  "title": "item_change",
+  "x-origin": "CLAUDE.md section 3 write trigger",
+  "description": "An item changes hands.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "op",
+    "item"
+  ],
+  "properties": {
+    "op": {
+      "enum": [
+        "acquire",
+        "lose"
+      ]
+    },
+    "item": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "item_change"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

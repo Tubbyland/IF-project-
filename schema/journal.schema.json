@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "journal.schema.json",
+  "title": "Journal",
+  "description": "Append-only. Never rewrite past entries.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entries"
+  ],
+  "properties": {
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "where",
+          "changed",
+          "unresolved"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "minLength": 1
+          },
+          "where": {
+            "type": "string",
+            "minLength": 1
+          },
+          "changed": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unresolved": {
+            "type": "string",
+            "minLength": 1
+          },
+          "promised_unpaid": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
