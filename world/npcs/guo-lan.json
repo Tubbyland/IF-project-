@@ -4,14 +4,17 @@
   "knows": [
     "that Xu Ping took an unusual interest in her sleeve and did not say why",
     "that she has an ordinary cough, which she has",
-    "that she is to come back in ten days"
+    "that she is to come back in ten days",
+    "that Xu Ping wanted a piece of the robe and would not say why",
+    "that Xu Ping lied to Master Dou on her behalf, badly"
   ],
   "last_seen": "his stall, the morning he cut the aconite",
   "name": "Guo Lan",
   "not_knows": [
     "that he can name a decoction by smell",
     "that anything about the cloth is considered wrong",
-    "that he added good cinnamon she could not have paid for"
+    "that he added good cinnamon she could not have paid for",
+    "that Xu Ping knows whose robe it was"
   ],
   "observed_not_explained": [
     "Her sleeves carry liquorice, cinnamon bark of good grade, and musk. And a fourth thing he could not name."
@@ -19,7 +22,7 @@
   "owes_owed": [
     "paid in full for the cough remedy — apricot kernel, liquorice"
   ],
-  "stage": "resistant",
-  "toward_player": "Wary-polite. Will not name who gave her the private sewing work. Stated fear: her shop master, Dou, learning she takes side work, and the work stopping.",
+  "stage": "cracked",
+  "toward_player": "Wary still. He covered for her in front of Dou and she gave him the collar band and would not take money for it, since money would need explaining. Has not named who gave her the work.",
   "voice": "Answers the exact question and nothing adjacent. Apologises when she is not sorry. Goes quiet rather than refuse outright."
 }
