@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/npc_update.schema.json",
+  "title": "npc_update",
+  "x-origin": "added: keeps current state current (a field with no writer can only go stale)",
+  "description": "Keep an NPC's descriptive fields current: where they were last seen, what is owed either way, how they look, how they speak. Stage, knowledge and attitude have their own kinds. Names are fixed; a wrong name is a correction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "npc"
+  ],
+  "properties": {
+    "npc": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "last_seen": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "voice": {
+      "type": "string",
+      "minLength": 1
+    },
+    "add_owes_owed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "remove_owes_owed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "kind": {
+      "const": "npc_update"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "last_seen"
+      ]
+    },
+    {
+      "required": [
+        "description"
+      ]
+    },
+    {
+      "required": [
+        "voice"
+      ]
+    },
+    {
+      "required": [
+        "add_owes_owed"
+      ]
+    },
+    {
+      "required": [
+        "remove_owes_owed"
+      ]
+    }
+  ]
+}

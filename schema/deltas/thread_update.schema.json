@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/thread_update.schema.json",
+  "title": "thread_update",
+  "x-origin": "added: keeps current state current (a field with no writer can only go stale)",
+  "description": "Restate an open thread as the player now understands it. Closed threads are the record of what was finished and cannot be rewritten.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "id",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "const": "thread_update"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  }
+}

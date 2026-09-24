@@ -12,6 +12,8 @@ purse that drifted, an edit nobody could audit. So writes are constrained:
 - `world/` is **JSON validated against `schema/`**, not prose.
 - Changes may only be made as **deltas** drawn from a closed vocabulary
   (`schema/deltas/`). A change outside it is invalid, not merely unusual.
+- `world/` always holds *current* state; every field has a delta kind that can
+  write it, and a test enforces that.
 - Every applied delta is appended to `world/log.jsonl` with a content hash and
   the hash of the resulting state.
 - A **PreToolUse hook denies direct writes to `world/`**, so the rule is

@@ -86,6 +86,15 @@ new kind rather than reaching for `correction`.
 is made or broken, a location changes permanently, a thread opens or closes, a
 skill crosses a threshold, an NPC changes stage, or what an NPC knows changes.
 
+**The store holds current state; the log holds history.** Both must be true at
+once. When a scene moves something on — where an NPC was last seen, what is
+owed, what a thread has become, how the player stands — update the field, don't
+let it go stale because the history is in the log. Every field in every schema
+has a kind that can write it (`npc_update`, `place_update`, `thread_update` and
+`player_update` exist for the descriptive ones), and a test fails if that ever
+stops being true. A reader of `bin/render` should never have to consult
+`bin/log` to learn where things stand now.
+
 **Record consequences, not events.** This now governs the deltas you emit. Not
 a `place_change` reading "Sam argued with Torres about the shipment for ten
 minutes." Rather a `relationship_shift` to `owes Sam 40 silver — resentful,

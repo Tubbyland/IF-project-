@@ -354,6 +354,58 @@ def _a_world_amend(st, d):
     st["world"][d["field"]] = d["value"]
 
 
+def _edit_list(lst, add, remove, label):
+    for item in add or []:
+        _append_unique(lst, item)
+    for item in remove or []:
+        if item not in lst:
+            raise DeltaError("%s has no entry %r" % (label, item))
+        lst.remove(item)
+
+
+def _a_npc_update(st, d):
+    npc = _require(st, "npcs", d["npc"])
+    for f in ("last_seen", "description", "voice"):
+        if f in d:
+            npc[f] = d[f]
+    _edit_list(npc.setdefault("owes_owed", []), d.get("add_owes_owed"),
+               d.get("remove_owes_owed"), "%s owes_owed" % d["npc"])
+
+
+def _a_place_update(st, d):
+    place = _require(st, "places", d["place"])
+    for f in ("controlled_by", "description"):
+        if f in d:
+            place[f] = d[f]
+    _edit_list(place.setdefault("hidden", []), d.get("add_hidden"),
+               d.get("remove_hidden"), "%s hidden" % d["place"])
+
+
+def _a_thread_update(st, d):
+    t = _require(st, "threads", d["id"])
+    if t["state"] == "closed":
+        raise DeltaError("thread %r is closed. Closed threads are the record of what "
+                         "was finished and are not rewritten." % d["id"])
+    t["summary"] = d["summary"]
+
+
+def _a_player_update(st, d):
+    p = st["player"]
+    if "wants_undetermined" in d and d["wants_undetermined"] != p["wants"]["undetermined"]:
+        if not d.get("player_approved"):
+            raise DeltaError(
+                "wants.undetermined was a promise made to the player in session zero. "
+                "Change it only after the player has said so, with player_approved true.")
+        p["wants"]["undetermined"] = d["wants_undetermined"]
+    if "wants_text" in d:
+        p["wants"]["text"] = d["wants_text"]
+    for f in ("situation", "bad_at", "money_note"):
+        if f in d:
+            p[f] = d[f]
+    _edit_list(p.setdefault("known_by", []), d.get("add_known_by"),
+               d.get("remove_known_by"), "player known_by")
+
+
 def _a_correction(st, d):
     set_path(st, d["path"], d["value"])
 
@@ -374,7 +426,38 @@ APPLIERS = {
     "journal_append": _a_journal_append,
     "world_amend": _a_world_amend,
     "correction": _a_correction,
+    "npc_update": _a_npc_update,
+    "place_update": _a_place_update,
+    "thread_update": _a_thread_update,
+    "player_update": _a_player_update,
 }
+
+# Every field of every entity must be writable by some delta kind, or be declared
+# fixed. A field nothing can write is a field that can only go stale.
+# `correction` is deliberately not counted: it is for errors, not for keeping current.
+WRITERS = {
+    "world":  {f: ["world_amend"] for f in (
+        "setting", "era", "scale", "tone", "what_can_exist", "established_frame",
+        "off_the_table", "play_style")},
+    "player": {"situation": ["player_update"], "bad_at": ["player_update"],
+               "money_note": ["player_update"], "wants": ["player_update"],
+               "known_by": ["player_update"], "money": ["money_change"],
+               "carrying": ["item_change"], "skills": ["skill_promotion"],
+               "observed_not_explained": ["observation_record"]},
+    "npc":    {"stage": ["npc_stage_change"], "knows": ["knowledge_change"],
+               "not_knows": ["knowledge_change"], "toward_player": ["relationship_shift"],
+               "promises": ["promise"], "observed_not_explained": ["observation_record"],
+               "last_seen": ["npc_update"], "owes_owed": ["npc_update"],
+               "description": ["npc_update"], "voice": ["npc_update"]},
+    "place":  {"changed": ["place_change"], "observed_not_explained": ["observation_record"],
+               "controlled_by": ["place_update"], "description": ["place_update"],
+               "hidden": ["place_update"]},
+    "thread": {"summary": ["thread_update"], "state": ["thread_close"],
+               "resolution": ["thread_close"]},
+    "journal": {"entries": ["journal_append"]},
+}
+FIXED = {"player": {"name"}, "npc": {"id", "name"}, "place": {"id", "name"},
+         "thread": {"id"}}
 
 
 def apply_delta(state, delta):

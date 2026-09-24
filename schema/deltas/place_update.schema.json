@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/place_update.schema.json",
+  "title": "place_update",
+  "x-origin": "added: keeps current state current (a field with no writer can only go stale)",
+  "description": "Keep a place current: who controls it, how it now looks, what is hidden there. remove_hidden is for something found; record what finding it changed with place_change.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind",
+    "place"
+  ],
+  "properties": {
+    "place": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "controlled_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "add_hidden": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "remove_hidden": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "kind": {
+      "const": "place_update"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "controlled_by"
+      ]
+    },
+    {
+      "required": [
+        "description"
+      ]
+    },
+    {
+      "required": [
+        "add_hidden"
+      ]
+    },
+    {
+      "required": [
+        "remove_hidden"
+      ]
+    }
+  ]
+}

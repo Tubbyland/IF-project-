@@ -171,6 +171,47 @@ class StoreTest(unittest.TestCase):
         self.assertNotEqual(r.returncode, 0)
         self.assertIn("does not match world/", r.stderr)
 
+    def test_every_field_has_a_writer(self):
+        """A field no delta kind can write can only go stale."""
+        import sys
+        sys.path.insert(0, os.path.join(REPO, "bin"))
+        import _state
+        kinds = set(_state.known_kinds())
+        for entity in ("world", "player", "npc", "place", "thread", "journal"):
+            props = set(_state.load_schema(entity)["properties"])
+            covered = set(_state.WRITERS.get(entity, {})) | _state.FIXED.get(entity, set())
+            self.assertEqual(props - covered, set(),
+                             "%s fields with no writer and not declared fixed" % entity)
+            self.assertEqual(covered - props, set(),
+                             "%s writer map names fields the schema lacks" % entity)
+            for field, writers in _state.WRITERS.get(entity, {}).items():
+                for k in writers:
+                    self.assertIn(k, kinds, "%s.%s names unknown kind %s" % (entity, field, k))
+
+    def test_npc_update_keeps_last_seen_and_owes_current(self):
+        r = self.apply({"kind": "npc_update", "npc": "guo-lan",
+                        "last_seen": "the tailors' lane",
+                        "add_owes_owed": ["he owes her for a collar band"]})
+        self.assertEqual(r.returncode, 0, r.stderr)
+        npc = json.loads(self.read("world", "npcs", "guo-lan.json"))
+        self.assertEqual(npc["last_seen"], "the tailors' lane")
+        self.assertIn("he owes her for a collar band", npc["owes_owed"])
+
+    def test_update_with_nothing_to_update_is_refused(self):
+        r = self.apply({"kind": "npc_update", "npc": "guo-lan"})
+        self.assertNotEqual(r.returncode, 0)
+
+    def test_closed_thread_cannot_be_rewritten(self):
+        r = self.apply({"kind": "thread_update", "id": "guo-lan-cloth-origin",
+                        "summary": "something else"})
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("closed", r.stderr)
+
+    def test_undetermined_wants_needs_player_approval(self):
+        r = self.apply({"kind": "player_update", "wants_undetermined": False})
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("promise made to the player", r.stderr)
+
     def test_render_runs(self):
         r = self.tool("render")
         self.assertEqual(r.returncode, 0, r.stderr)

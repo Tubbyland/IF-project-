@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deltas/player_update.schema.json",
+  "title": "player_update",
+  "x-origin": "added: keeps current state current (a field with no writer can only go stale)",
+  "description": "Keep the player's standing fields current. Money has money_change, skills have skill_promotion, inventory has item_change. wants_undetermined is a promise made to the player in session zero and can only change with player_approved.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "kind"
+  ],
+  "properties": {
+    "situation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bad_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "money_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wants_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "wants_undetermined": {
+      "type": "boolean"
+    },
+    "player_approved": {
+      "type": "boolean"
+    },
+    "add_known_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "remove_known_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "kind": {
+      "const": "player_update"
+    },
+    "note": {
+      "type": "string",
+      "description": "Why this is durable. Consequences, not events."
+    }
+  },
+  "anyOf": [
+    {
+      "required": [
+        "situation"
+      ]
+    },
+    {
+      "required": [
+        "bad_at"
+      ]
+    },
+    {
+      "required": [
+        "money_note"
+      ]
+    },
+    {
+      "required": [
+        "wants_text"
+      ]
+    },
+    {
+      "required": [
+        "wants_undetermined"
+      ]
+    },
+    {
+      "required": [
+        "add_known_by"
+      ]
+    },
+    {
+      "required": [
+        "remove_known_by"
+      ]
+    }
+  ]
+}
