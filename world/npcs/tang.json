@@ -5,9 +5,11 @@
     "Xu Ping's name and trade",
     "that he knocked at the Geng gate at the second drum and was refused",
     "that he is not a harmless confused old man, and let him back into the ward anyway",
-    "that his own heart is failing, because Xu Ping told him plainly"
+    "that his own heart is failing, because Xu Ping told him plainly",
+    "that Xu Ping has the collar band of Geng Su's robe, got by way of a seamstress",
+    "that the green on it is the smell that comes off the Geng house"
   ],
-  "last_seen": "his brazier, through the night, after the second drum",
+  "last_seen": "his gate at the dawn drum on the fifth day",
   "name": "Tang",
   "not_knows": [
     "about the musk",
@@ -16,7 +18,8 @@
     "that Xu Ping knelt at the Geng east wall and put his hands in the gutter"
   ],
   "observed_not_explained": [
-    "Set out a second stool before being asked."
+    "Set out a second stool before being asked.",
+    "Did his conscript service on the Juyan line in his twenties. Says the green is the smell of the western traders' camp there: something they burned at night in a clay pot. The soldiers said it was for sickness, or for the dead; he is not sure which. He never knew what it was called."
   ],
   "owes_owed": [
     "Xu Ping told him what the swelling in his ankles means and what to do about it, and took nothing for it"
@@ -29,6 +32,6 @@
     }
   ],
   "stage": "conflicted",
-  "toward_player": "Warm, and now uneasy with it. Has worked out that helping means informing on a household in his own ward, and said so out loud. Will still talk. Will not be asked to watch and report.",
+  "toward_player": "Warm, and uneasier than before. Smelled the collar band and said where he had met the smell, then asked Xu Ping not to bring the dead man's clothes to his gate again. Is sleeping propped and has given up the salt fish, and says so. Told Pei the truth about him.",
   "voice": "Circles back to his own feet from any subject in under three sentences."
 }
