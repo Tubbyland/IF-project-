@@ -20,6 +20,21 @@ class StoreTest(unittest.TestCase):
             shutil.copytree(os.path.join(REPO, part), os.path.join(self.dir, part))
         shutil.rmtree(os.path.join(self.dir, "bin", "__pycache__"), ignore_errors=True)
         self.addCleanup(shutil.rmtree, self.dir, True)
+        # Run against the frozen genesis snapshot, not the live story, so that
+        # playing the game can never break the tests.
+        world = os.path.join(self.dir, "world")
+        for name in ("world.json", "player.json", "journal.json"):
+            os.remove(os.path.join(world, name))
+        for coll in ("npcs", "places", "threads"):
+            shutil.rmtree(os.path.join(world, coll))
+        genesis = os.path.join(world, "genesis")
+        for entry in os.listdir(genesis):
+            src = os.path.join(genesis, entry)
+            if os.path.isdir(src):
+                shutil.copytree(src, os.path.join(world, entry))
+            else:
+                shutil.copy(src, os.path.join(world, entry))
+        open(os.path.join(world, "log.jsonl"), "w").close()
 
     # -- helpers ----------------------------------------------------------
     def tool(self, name, stdin=None, args=()):
