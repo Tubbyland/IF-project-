@@ -1,0 +1,23 @@
+{
+  "description": "Head of the one small western caravan camped this winter in the yards outside the west wall. Sixties, small, bow-legged from a life on camels, a long grey braid. Speaks a trader's Chinese: nouns and prices, few verbs. Xu Ping cannot say his name.",
+  "id": "old-trader",
+  "knows": [
+    "that Xu Ping treated his driver's frozen feet and took nothing for it",
+    "that Xu Ping carries a piece of cloth that smells strongly of the green, and that it has been worn on a man's body",
+    "who in Chang'an bought his caravan's whole stock of the green: a Han broker called Yan"
+  ],
+  "last_seen": "the camp in the yards outside the west wall, afternoon of the fifth day",
+  "name": "The old trader",
+  "not_knows": [
+    "whose clothes the cloth came from",
+    "where Yan sold the green on",
+    "Xu Ping's name — he did not ask"
+  ],
+  "observed_not_explained": [],
+  "owes_owed": [
+    "owes Xu Ping for the driver's feet"
+  ],
+  "stage": "cracked",
+  "toward_player": "Amused, and in his debt, and prepared to be useful up to a point. Does not ask what the physician wants it for.",
+  "voice": "Answers with a price, a place or a gesture before he answers with a word. Laughs at his own customers."
+}
