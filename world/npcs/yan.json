@@ -1,0 +1,20 @@
+{
+  "description": "Broker who handles the western traders' business, a room over a cloth seller's by the market's east gate. Fifties, large, cheerful, discreet about everything except what he considers common knowledge.",
+  "id": "yan",
+  "knows": [
+    "that he sold a winter's stock of the western resin to Du Heng, paid in silk",
+    "that Du Heng's mark is two strokes and a hook, and that everyone who sells to the palace knows it",
+    "that Xu Ping asked"
+  ],
+  "last_seen": "his room by the east gate, morning of the sixth day",
+  "name": "Yan",
+  "not_knows": [
+    "what Du Heng uses the resin for",
+    "anything about the Geng house"
+  ],
+  "observed_not_explained": [],
+  "owes_owed": [],
+  "stage": "cracked",
+  "toward_player": "Friendly and unbothered. Told him what he considers common knowledge and nothing more.",
+  "voice": "Calls every man elder brother, including men younger than himself."
+}

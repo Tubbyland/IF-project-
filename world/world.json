@@ -18,20 +18,19 @@
     "TOUCHSTONE. Penelope Fitzgerald, The Beginning of Spring: a historical world explained to nobody, ever. Steal the ballast, and the confidence not to gloss the period for the reader.",
     "TOUCHSTONE. Simenon, the Maigret books and the romans durs: deliberately plain vocabulary, atmosphere carried by weather, rooms, food and the hour of the day. Steal the absence of rhetorical machinery.",
     "TOUCHSTONE, runner-up. Ishiguro, An Artist of the Floating World: an ageing professional circling his own decline, self-justifying, looping. Steal the disorderly interiority.",
-    "The touchstones are targets, not a licence for pastiche. PROSE 1-7 are the enforceable rules; a Chekhovian gesture is not the same as actually withholding. All four are novelists of duration — their pacing cannot be borrowed inside a scene of a few hundred words, only their sentences."
+    "The touchstones are targets, not a licence for pastiche. PROSE 1-7 are the enforceable rules; a Chekhovian gesture is not the same as actually withholding. All four are novelists of duration — their pacing cannot be borrowed inside a scene of a few hundred words, only their sentences.",
+    "MOVE FASTER (player, fifth day). Bigger jumps in time, fewer quiet scenes, threads brought to a head within a few turns. Let answers land when they are earned."
   ],
   "scale": "One city. Mostly two market wards and the streets between them.",
   "setting": "Chang'an, capital of Han. The West Market and the walled wards around it.",
   "tone": "Scandinavian detective. Procedural pleasure and quiet dread running side by side on the same page — competence is what the reader enjoys, deterioration is what they dread. Rich in the detail of the craft: ingredients, weights, processing, diagnosis, rendered with the delight Xu Ping takes in them.",
   "what_can_exist": {
-    "cost": "Nothing is established as operative, so nothing has a price. Do not invent one.",
-    "mode": "ambiguous",
+    "cost": "Nothing supernatural operates, so nothing has a price.",
+    "mode": "materialist",
     "rules": [
-      "Permanently ambiguous in both directions. There is no hidden answer held in reserve.",
-      "Every anomaly carries a mundane explanation available at the same moment as the other reading. Both stay open.",
-      "Anomalies are small and deniable: a count that will not reconcile, a recovery on the wrong timetable, a symptom arriving out of order. Never an apparition.",
-      "He barely notices. He notices late, or not at all.",
-      "RECORDING RULE: write down what was observed. Never what it meant."
+      "Changed at the player's request on the fifth day: things are true and can be found out. Every anomaly in the Geng house has a real, mundane cause.",
+      "The medicine of the period is intact. Nothing supernatural operates; people believe in it, and belief moves money and behaviour.",
+      "Recording: once Xu Ping has established a fact, record it as fact. observed_not_explained is for what he has seen and does not yet understand."
     ]
   }
 }

@@ -1,6 +1,8 @@
 {
-  "changed": [],
-  "controlled_by": "The Geng family. Master Geng Su, an official, died some weeks ago. Steward Pei holds the gate. The elder son is on the road from Longxi.",
+  "changed": [
+    "Xu Ping has been inside: the room where Geng Su lies, and Du Heng's slips on the table there."
+  ],
+  "controlled_by": "The Geng family. The widow keeps to the back rooms and has not come out since the first week. By agreement with her, Du Heng has the use of the master's body until the son comes, and pays the house's debts and the musk. Pei does the work.",
   "description": "Fourth ward east of the West Market, three doors along from the ward gate. A family with a name and a salary. Retiled expensively about fifteen years ago, untouched since. Weeds at the base of the east wall where a gardener used to be.",
   "hidden": [],
   "id": "geng-house",
@@ -19,6 +21,8 @@
     "The green is strongest in the waste water leaving the east gutter, and the water is warm.",
     "In his last two months Geng Su grew thin, stopped riding, and left the ward five or six times before the dawn drum. He returned before the household woke, once carrying something wrapped and heavy, wet to the ankle.",
     "The collar band of Geng Su's robe carries the green more strongly than anything yet, the gutter included, and musk only faintly. Guo Lan's sleeve three days earlier carried musk heavily and the green faintly.",
-    "The old western trader, told how the knot on the courtyard jars was tied, tied the same knot in a bit of cord and said it was his people's. His caravan's whole stock of the green was sold this winter through a Han broker called Yan, paid in silk."
+    "The old western trader, told how the knot on the courtyard jars was tied, tied the same knot in a bit of cord and said it was his people's. His caravan's whole stock of the green was sold this winter through a Han broker called Yan, paid in silk.",
+    "Geng Su's body, six weeks dead, is dark, dry and shrunk but whole. There is no softening. Braziers of the green and musk burn day and night and the body is washed three times a day in hot water with the resin in it. Du Heng's daily slips on the table record its condition.",
+    "One of Du Heng's slips cites 'the notes of the late master Gongsun, from the stores of the old emperor's physicians'. Gongsun was Xu Ping's teacher."
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "description": "Attendant physician of the palace medical office. Forties, good robe, a carriage with a proper team and a driver who waits. Writes everything down in a fine small hand and signs with two strokes and a hook.",
+  "id": "du-heng",
+  "knows": [
+    "that Geng Su died of his chest in spite of the western resin",
+    "what the resin has done to the body over six weeks, in daily slips"
+  ],
+  "last_seen": "arriving at the Geng gate by carriage at dusk on the sixth day",
+  "name": "Du Heng",
+  "not_knows": [
+    "that Xu Ping exists",
+    "that Xu Ping has been inside the Geng house and read the slips"
+  ],
+  "observed_not_explained": [],
+  "owes_owed": [
+    "pays the Geng house's debts and the musk, for the use of Geng Su's body until the son comes"
+  ],
+  "stage": "resistant",
+  "toward_player": "Has never heard of him.",
+  "voice": "Asks questions he already knows the answers to, to watch how people answer them."
+}

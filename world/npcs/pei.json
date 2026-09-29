@@ -4,19 +4,18 @@
   "knows": [
     "Xu Ping's name and trade",
     "that Xu Ping can smell something from the gutter he cannot name — Xu Ping told him all of it, at the gate, truthfully",
-    "from Tang: that the physician who knocked sat the rest of that night out at the ward gate"
+    "from Tang: that the physician who knocked sat the rest of that night out at the ward gate",
+    "that Xu Ping knows Du Heng pays the house and why",
+    "that Xu Ping has seen the room and read the slips"
   ],
-  "last_seen": "his own doorway, at the second drum",
+  "last_seen": "the room where Geng Su lies, dusk on the sixth day, going to open the gate to Du Heng",
   "name": "Pei",
-  "not_knows": [
-    "that he followed the musk delivery",
-    "that he knelt at the east wall"
-  ],
+  "not_knows": [],
   "observed_not_explained": [
     "Before refusing, before asking anything else, he said: \"Did he send you?\""
   ],
   "owes_owed": [],
-  "stage": "resistant",
-  "toward_player": "Refused him at the gate and barred it. Not hostile. Rehearsed.",
+  "stage": "cracked",
+  "toward_player": "Let him in and told him everything, in a flat voice, because six weeks is a long time to carry it. Does not know whether he has made things better or worse, and will not ask him to keep quiet.",
   "voice": "Says \"the house\" where another man would say we, or the family. Never opens a door more than the width of his own shoulder."
 }
