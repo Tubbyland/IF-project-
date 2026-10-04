@@ -46,9 +46,12 @@ def clue_range(clue: int, cfg: GameConfig) -> tuple[float, float]:
 
 def leaders_and_eligible(cfg: GameConfig, tracks: Sequence[int]):
     """Leaders: everyone tied for the largest |track|. Eligible: non-leaders
-    whose |track| is at least `veto_gap` below the leaders'."""
+    whose |track| is at least `veto_gap` below the leaders'. With vetoes
+    switched off, nobody is ever eligible."""
     top = max(abs(t) for t in tracks)
     leaders = [i for i, t in enumerate(tracks) if abs(t) == top]
+    if not cfg.vetoes_enabled:
+        return leaders, []
     eligible = [i for i, t in enumerate(tracks)
                 if i not in leaders and abs(t) <= top - cfg.veto_gap]
     return leaders, eligible

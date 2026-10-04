@@ -65,6 +65,7 @@ class Summary:
     drifts: np.ndarray
     gaps: np.ndarray
     kingmaking: int
+    tension: dict = field(default_factory=dict)
     dominance: list[str] = field(default_factory=list)
 
 
@@ -149,8 +150,47 @@ def summarise(cfg: GameConfig, results: list[GameResult]) -> Summary:
                 strategy_rates=strategy_rates, veto=veto,
                 drifts=np.array(drifts), gaps=np.array(gaps),
                 kingmaking=kingmaking)
+    s.tension = tension(results)
     s.dominance = dominance_flags(s)
     return s
+
+
+def tension(results: list[GameResult]) -> dict:
+    """Rough measures of whether a game stays open.
+
+    comeback: of solo and bust wins, the share where the winner was not
+      already ahead going into the deciding round (for solo, ahead = furthest
+      from zero; for bust, ahead = closest to zero).
+    lead_changes: per game, how often the player(s) furthest from zero
+      change from one round to the next.
+    ending_spread: how evenly games split between solo, bust and shared
+      endings, from 0 (always the same) to 1 (a third each).
+    """
+    comebacks = decided = 0
+    changes = 0
+    for r in results:
+        prev = None
+        for rec in r.records:
+            top = max(abs(t) for t in rec.tracks_after)
+            lead = frozenset(i for i, t in enumerate(rec.tracks_after)
+                             if abs(t) == top) if top else None
+            if prev is not None and lead is not None and lead != prev:
+                changes += 1
+            if lead is not None:
+                prev = lead
+        if r.end_type in (END_SOLO, END_BUST):
+            before = [abs(t) for t in r.records[-1].tracks_before]
+            best = max(before) if r.end_type == END_SOLO else min(before)
+            ahead = {i for i, t in enumerate(before) if t == best}
+            decided += 1
+            comebacks += not set(r.winners) & ahead
+    counts = Counter(r.end_type for r in results)
+    probs = [counts[e] / len(results) for e in (END_SOLO, END_BUST,
+                                                END_SHARED)]
+    entropy = -sum(p * np.log(p) for p in probs if p > 0) / np.log(3)
+    return {"comeback": comebacks / decided if decided else 0.0,
+            "lead_changes": changes / len(results),
+            "ending_spread": float(entropy)}
 
 
 def dominance_flags(s: Summary) -> list[str]:
@@ -218,6 +258,12 @@ def format_summary(s: Summary, title: str = "") -> str:
     lines.append(f"  games a steal decided       {_pct(v['steal_caused_win'])}")
     lines.append(f"  kingmaking (20+ dump double-vetoed into a vetoer's win): "
                  f"{s.kingmaking} games ({_pct(s.kingmaking / s.n).strip()})")
+    t = s.tension
+    lines.append("")
+    lines.append("Tension")
+    lines.append(f"  winner came from behind      {_pct(t['comeback'])}")
+    lines.append(f"  lead changes per game        {t['lead_changes']:.2f}")
+    lines.append(f"  ending spread (0-1)          {t['ending_spread']:.2f}")
     lines.append("")
     lines.append("Distributions")
     lines.append("  per-player drift  " + _quantiles(s.drifts))

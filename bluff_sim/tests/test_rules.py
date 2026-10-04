@@ -157,6 +157,13 @@ class Eligibility(unittest.TestCase):
         self.assertEqual(leaders, [0])
         self.assertEqual(elig, [1, 3])
 
+    def test_vetoes_switched_off(self):
+        cfg = CFG.with_(vetoes_enabled=False)
+        self.assertEqual(leaders_and_eligible(cfg, [-14, 4, 5, 0])[1], [])
+        r = play_game(cfg, make_table(["drifter", "anchor", "opportunist",
+                                       "adaptive"]), 5)
+        self.assertTrue(all(not rec.vetoes for rec in r.records))
+
     def test_tied_leaders_both_ineligible(self):
         leaders, elig = leaders_and_eligible(CFG, [12, -12, 2, 1])
         self.assertEqual(leaders, [0, 1])

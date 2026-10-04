@@ -29,6 +29,7 @@ game:
   clue_close: 2               # |drift| <= 2 is "close"
   clue_much: 8                # |drift| >= 8 is "much lower/higher"
 
+  vetoes_enabled: true        # false removes the veto phase
   veto_gap: 10                # X
   veto_target: any            # any | leader
   double_veto_at: 2

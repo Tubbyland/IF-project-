@@ -55,6 +55,7 @@ class GameConfig:
     clue_much: int = 8
 
     # --- Vetoes ----------------------------------------------------------------
+    vetoes_enabled: bool = True        # False removes the veto phase
     veto_gap: int = 10                 # X: eligible if |track| <= leader's - X
     veto_target: str = "any"           # "any" or "leader"
     double_veto_at: int = 2            # vetoes needed to zero group drift
