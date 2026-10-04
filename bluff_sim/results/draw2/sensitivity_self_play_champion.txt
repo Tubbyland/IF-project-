@@ -1,0 +1,21 @@
+Sensitivity (each parameter moved to its bounds; base score 0.307; differences under ~0.013 are noise)
+
+  parameter                tuned          at low         at high  matters?
+  help_weight              0.879      0 +0.268       1 -0.010  yes
+  trust                     0.06      0 -0.002       1 +0.068  yes
+  solo_at                     21      0 -0.015      30 -0.003  a little
+  card_cost               -1.216     -3 +0.003       3 +0.010  no
+  lie_rate                 0.474      0 +0.004       1 +0.007  no
+  extreme_cost             1.154      0 +0.003       4 +0.007  no
+  veto_threshold            20.0      0 +0.007      20 +0.000  no
+  final_solo_at               10      0 +0.006      30 -0.002  no
+  lie_size                     1      1 +0.000       3 +0.005  no
+  final_help_weight          1.0      0 -0.004       1 +0.000  no
+  deny_weight                1.4      0 -0.003     1.5 +0.000  no
+  final_veto_threshold      7.11      0 +0.002      20 -0.003  no
+  aggr_early              19.712      0 -0.002      20 +0.000  no
+  anchor_margin                2      2 +0.000      30 +0.001  no
+  room_margin              5.485    -10 -0.000      15 -0.001  no
+  aggr_late                7.731      0 -0.001      30 -0.000  no
+  late_round                   5      1 +0.000       7 -0.000  no
+  final_room_margin        6.968    -10 +0.000      15 +0.000  no
