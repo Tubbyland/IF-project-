@@ -1,0 +1,44 @@
+# Every rule parameter, at its default. Copy this file, change what you need,
+# and pass it with --config. Keys you leave out keep their defaults.
+game:
+  n_players: 4
+  hand_size: 5
+  rounds: 7
+
+  hand_lo: 1
+  hand_hi: 20
+  hand_copies: 4
+  hand_copies_auto: true      # add copies if a game could empty the deck
+
+  personal_lo: 15
+  personal_hi: 30
+  personal_copies: 2          # reshuffled from used targets when empty
+
+  collective_mode: split      # split | continuous
+  collective_split: [[70, 82], [98, 110]]
+  collective_continuous: [75, 105]
+
+  win_threshold: 30
+  track_cap: null             # null = tracks are not clamped
+  bust_limit: 20              # bust when |tally| > this
+
+  min_cards: 1
+  max_cards: 3
+  draw_per_round: 1
+
+  clue_close: 2               # |drift| <= 2 is "close"
+  clue_much: 8                # |drift| >= 8 is "much lower/higher"
+
+  veto_gap: 10                # X
+  veto_target: any            # any | leader
+  double_veto_at: 2
+
+  final_multiplier: 2
+  final_doubles_stolen: true
+
+  bust_win_requires_near_zero: false
+  bust_near_zero: 5
+
+# One strategy per seat (used by run, sweep and experiment unless --seats is
+# given). "adaptive" seats are the ones the experiment tunes.
+seats: [careful_drifter, anchor, adaptive, adaptive]
