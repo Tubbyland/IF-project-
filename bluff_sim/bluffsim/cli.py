@@ -124,7 +124,8 @@ def cmd_sweep(args):
 
 
 def cmd_experiment(args):
-    from .tune import Evaluator, best_response, self_play
+    from .tune import (Evaluator, best_response, format_sensitivity,
+                       self_play, sensitivity)
     cfg = _cfg(args)
     out = args.out
     os.makedirs(out, exist_ok=True)
@@ -174,6 +175,12 @@ def cmd_experiment(args):
             "```\n", "Search progress (generation, best, mean): " +
             ", ".join(f"({g}, {b:.3f}, {m:.3f})" for g, b, m in br.history)
             + "\n", "```", br_text, "```\n", "```", br_dec, "```\n"]
+
+        log("Sensitivity of the best-response strategy")
+        sens = sensitivity(
+            cfg, br.best, lambda q: _br_tables(cfg, seats, q), ev, rng,
+            args.sens_games)
+        report += ["```", format_sensitivity(sens, args.sens_games), "```\n"]
 
         if args.skip_self_play:
             sp = None
@@ -227,6 +234,31 @@ def cmd_experiment(args):
     print(f"\nReport: {os.path.join(out, 'report.md')}")
 
 
+def _br_tables(cfg, seats, p):
+    specs = [s if s != "adaptive" else Adaptive(p, "tuned") for s in seats]
+    return [(specs, [i for i, s in enumerate(seats) if s == "adaptive"])]
+
+
+def cmd_sensitivity(args):
+    from .tune import Evaluator, _vs_field, format_sensitivity, sensitivity
+    cfg = _cfg(args)
+    with open(args.params) as f:
+        data = json.load(f)
+    p = Params.from_dict(data.get("params", data))
+    if args.self_play:
+        build = lambda q: _vs_field(cfg, q, p)  # noqa: E731
+    else:
+        build = lambda q: _br_tables(cfg, _seats(args, cfg), q)  # noqa: E731
+    ev = Evaluator(cfg, args.workers)
+    try:
+        rows = sensitivity(cfg, p, build, ev, random.Random(args.seed),
+                           args.games)
+    finally:
+        ev.close()
+    print(format_sensitivity(rows, args.games * (cfg.n_players
+                                                 if args.self_play else 2)))
+
+
 def _save_params(p: Params, path, label, score):
     with open(path, "w") as f:
         json.dump({"label": label, "score": score, "params": p.to_dict(),
@@ -275,7 +307,18 @@ def main(argv=None):
     p.add_argument("--sp-gens", type=int, default=10)
     p.add_argument("--sp-games", type=int, default=400,
                    help="seeds per candidate; each is played once per seat")
+    p.add_argument("--sens-games", type=int, default=3000)
     p.set_defaults(fn=cmd_experiment)
+
+    p = sub.add_parser("sensitivity",
+                       help="which tuned parameters actually matter")
+    _common(p)
+    p.add_argument("params", help="parameter JSON written by experiment")
+    p.add_argument("--seats", help="table for best-response mode")
+    p.add_argument("--self-play", action="store_true",
+                   help="score in a field of copies of the same strategy")
+    p.add_argument("--games", type=int, default=3000)
+    p.set_defaults(fn=cmd_sensitivity)
 
     args = ap.parse_args(argv)
     args.fn(args)

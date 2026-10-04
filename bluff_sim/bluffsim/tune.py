@@ -267,3 +267,54 @@ def _verdict(uniq, cross, accepted) -> str:
     return (f"Still moving: the last iteration was {tail} with parameter "
             f"moves {', '.join(f'{d:.2f}' for d in drift)}; run more "
             f"iterations to see whether it settles.")
+
+
+def sensitivity(cfg: GameConfig, params: Params, tables_for, ev: Evaluator,
+                rng, games=3000) -> list[dict]:
+    """Move each parameter to its low and high bound, one at a time, and
+    measure the win score. `tables_for(p)` builds the evaluation tables for
+    a candidate. Parameters whose bounds barely change the score are ones
+    the strategy does not rely on, whatever value the search left them at.
+    """
+    from .bots.adaptive import BOUNDS
+    seeds = _seeds(rng, games)
+    variants = [params]
+    keys = []
+    for k, (lo, hi, _) in BOUNDS.items():
+        for v in (lo, hi):
+            d = params.to_dict()
+            d[k] = v
+            variants.append(Params(**d).clipped())
+            keys.append((k, v))
+    scores = ev.score([tables_for(p) for p in variants], seeds)
+    base = scores[0]
+    rows = {}
+    for (k, v), s in zip(keys, scores[1:]):
+        r = rows.setdefault(k, {"param": k, "value": params.to_dict()[k],
+                                "base": base})
+        side = "low" if v == BOUNDS[k][0] else "high"
+        r[f"{side}_value"], r[f"{side}_score"] = v, s
+    out = []
+    for r in rows.values():
+        r["impact"] = max(abs(r["low_score"] - base),
+                          abs(r["high_score"] - base))
+        out.append(r)
+    out.sort(key=lambda r: -r["impact"])
+    return out
+
+
+def format_sensitivity(rows, games) -> str:
+    noise = 2 * (0.25 / games) ** 0.5
+    lines = [f"Sensitivity (each parameter moved to its bounds; base score "
+             f"{rows[0]['base']:.3f}; differences under ~{noise:.3f} are "
+             f"noise)", "",
+             f"  {'parameter':<22}{'tuned':>8}{'at low':>16}{'at high':>16}"
+             f"  matters?"]
+    for r in rows:
+        tag = ("yes" if r["impact"] >= 2 * noise else
+               "a little" if r["impact"] >= noise else "no")
+        lines.append(
+            f"  {r['param']:<22}{r['value']:>8}"
+            f"{r['low_value']:>7} {r['low_score'] - r['base']:+.3f} "
+            f"{r['high_value']:>7} {r['high_score'] - r['base']:+.3f}  {tag}")
+    return "\n".join(lines)
