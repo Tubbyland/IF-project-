@@ -33,6 +33,8 @@ game:
   veto_gap: 10                # X
   veto_target: any            # any | leader
   double_veto_at: 2
+  veto_mode: take            # take | block | choose
+  veto_cost: 0                # cards a vetoer must discard
 
   final_multiplier: 2
   final_doubles_stolen: true

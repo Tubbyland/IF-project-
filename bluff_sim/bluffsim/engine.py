@@ -73,11 +73,13 @@ class Resolution:
 def resolve_round(cfg: GameConfig, tracks: Sequence[int], tally: int,
                   personal: Sequence[int], collective: int,
                   totals: Sequence[int], vetoes: dict[int, Optional[int]],
-                  final: bool) -> Resolution:
+                  final: bool, takes: Optional[dict] = None) -> Resolution:
     """Apply step 4 (reveal and resolve) and the end checks.
 
     `vetoes` maps vetoer -> target (or None for a pass). A vetoer takes only
     the target's own pocket drift, never what the target stole this round.
+    Under veto_mode "block" vetoers receive nothing; under "choose",
+    `takes[vetoer]` says whether that vetoer kept the drift.
     """
     n = len(tracks)
     mult = cfg.final_multiplier if final else 1
@@ -98,6 +100,11 @@ def resolve_round(cfg: GameConfig, tracks: Sequence[int], tally: int,
             delta[j] += drifts[j] * mult
             continue
         for v in vs:
+            if cfg.veto_mode == "block":
+                continue
+            if cfg.veto_mode == "choose" and takes is not None \
+                    and not takes.get(v, True):
+                continue
             delta[v] += drifts[j] * steal_mult
             stolen.append((v, j, drifts[j] * steal_mult))
         if len(vs) >= cfg.double_veto_at:
@@ -295,7 +302,10 @@ def play_game(cfg: GameConfig, bots: Sequence, seed: int) -> GameResult:
 
         # Vetoes, declared simultaneously: each bot decides from the same view.
         vetoes: dict[int, Optional[int]] = {}
+        paid: list[int] = []
         for i in pub.eligible:
+            if len(hands[i]) < cfg.veto_cost:
+                continue
             t = bots[i].veto(i, pub, tuple(hands[i]), cards[i])
             if t is not None:
                 if t == i or not 0 <= t < n:
@@ -304,12 +314,33 @@ def play_game(cfg: GameConfig, bots: Sequence, seed: int) -> GameResult:
                     raise RuleViolation(f"seat {i} vetoed non-leader {t}")
             vetoes[i] = t
 
-        totals = [sum(c) for c in cards]
-        res = resolve_round(cfg, pub.tracks, pub.tally, pub.personal,
-                            pub.collective, totals, vetoes, final)
+        # Paying for vetoes: each vetoer discards veto_cost cards.
+        if cfg.veto_cost:
+            for i, t in vetoes.items():
+                if t is None:
+                    continue
+                gone = tuple(bots[i].veto_discard(i, pub, tuple(hands[i]),
+                                                  cfg.veto_cost))
+                if len(gone) != cfg.veto_cost:
+                    raise RuleViolation(f"seat {i} paid {len(gone)} cards")
+                _remove_cards(hands[i], gone)
+                paid.extend(gone)
 
-        if res.end_type is not None and res.stolen:
-            decisive = _decisive_steals(cfg, pub, totals, vetoes, final, res)
+        totals = [sum(c) for c in cards]
+        takes = None
+        if cfg.veto_mode == "choose":
+            mult = (cfg.final_multiplier
+                    if final and cfg.final_doubles_stolen else 1)
+            takes = {v: bool(bots[v].keep_steal(
+                         v, pub, t, (totals[t] - pub.personal[t]) * mult))
+                     for v, t in vetoes.items() if t is not None}
+        res = resolve_round(cfg, pub.tracks, pub.tally, pub.personal,
+                            pub.collective, totals, vetoes, final, takes)
+
+        if res.end_type is not None and any(
+                t is not None for t in vetoes.values()):
+            decisive = _decisive_steals(cfg, pub, totals, vetoes, final, res,
+                                        takes)
 
         rec = RoundRecord(
             round=r, first=first, order=list(pub.order),
@@ -326,7 +357,7 @@ def play_game(cfg: GameConfig, bots: Sequence, seed: int) -> GameResult:
         pub.history.append(rec)
 
         # Cleanup.
-        for c in cards:
+        for c in list(cards) + [paid]:
             for v in c:
                 pub.discard[v] += 1
         pub.tracks, pub.tally = res.tracks, res.tally
@@ -344,21 +375,22 @@ def play_game(cfg: GameConfig, bots: Sequence, seed: int) -> GameResult:
                       records=pub.history, decisive_steals=decisive, seed=seed)
 
 
-def _decisive_steals(cfg, pub, totals, vetoes, final, res):
-    """Steals the winning vetoer could not have won without.
+def _decisive_steals(cfg, pub, totals, vetoes, final, res, takes=None):
+    """Vetoes the winning vetoer could not have won without.
 
-    For each steal in the game-ending round, re-resolve with that single veto
+    For each veto in the game-ending round, re-resolve with that single veto
     turned into a pass. If the vetoer won and would not have won otherwise,
-    the steal caused the win.
+    the veto caused the win. Returns (vetoer, target, drift taken).
     """
+    taken = {(v, t): a for v, t, a in res.stolen}
     out = []
-    for v, t, amount in res.stolen:
-        if v not in res.winners:
+    for v, t in vetoes.items():
+        if t is None or v not in res.winners:
             continue
         alt = dict(vetoes)
         alt[v] = None
         cf = resolve_round(cfg, pub.tracks, pub.tally, pub.personal,
-                           pub.collective, totals, alt, final)
+                           pub.collective, totals, alt, final, takes)
         if cf.end_type is None or v not in cf.winners:
-            out.append((v, t, amount))
+            out.append((v, t, taken.get((v, t), 0)))
     return out

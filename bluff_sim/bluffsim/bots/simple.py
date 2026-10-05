@@ -14,12 +14,12 @@ from .base import (Bot, drift_room, estimate_drift, extreme_total, lie,
 
 def _toward_zero(pub, seat):
     t = pub.tracks[seat]
-    return lambda target, s, counts: abs(t) - abs(t + s)
+    return lambda s: abs(t) - abs(t + s)
 
 
 def _away_from_zero(pub, seat):
     t = pub.tracks[seat]
-    return lambda target, s, counts: abs(t + s) - abs(t)
+    return lambda s: abs(t + s) - abs(t)
 
 
 def helper_desired_drift(pub, seat, hand, trust=0.7) -> float:
@@ -185,11 +185,7 @@ class Opportunist(Bot):
             return self.best_steal(pub, seat, hand, pocket,
                                    _toward_zero(pub, seat), 3)
         t = pub.tracks[seat]
-
-        def gain(target, s, counts):
-            if target not in pub.leaders:
-                return float("-inf")
-            lt = pub.tracks[target]
-            deny = abs(s) if sign(s) == sign(lt) else 0
-            return deny - 0.5 * max(0, abs(t + s) - abs(t))
-        return self.best_steal(pub, seat, hand, pocket, gain, 5)
+        return self.best_steal(
+            pub, seat, hand, pocket,
+            lambda s: -0.5 * max(0, abs(t + s) - abs(t)), 5,
+            deny_weight=1.0, leaders_only=True)

@@ -232,12 +232,7 @@ class Adaptive(Bot):
         outward = self.mode(seat, pub) == "solo"
         threshold = p.final_veto_threshold if pub.final else p.veto_threshold
 
-        def gain(target, s, counts):
-            g = (abs(t + s) - abs(t)) if outward else (abs(t) - abs(t + s))
-            if target in pub.leaders:
-                lt = pub.tracks[target]
-                if sign(s) == sign(lt):
-                    g += p.deny_weight * abs(s)
-            return g
-        return self.best_steal(pub, seat, hand, pocket, gain, threshold,
-                               p.trust)
+        def own(s):
+            return (abs(t + s) - abs(t)) if outward else (abs(t) - abs(t + s))
+        return self.best_steal(pub, seat, hand, pocket, own, threshold,
+                               p.trust, deny_weight=p.deny_weight)

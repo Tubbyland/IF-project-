@@ -202,14 +202,56 @@ class Bot:
     def truthful(self, pub: PublicState, seat: int, cards) -> int:
         return clue_for(sum(cards) - pub.personal[seat], pub.cfg)
 
-    def best_steal(self, pub, seat, hand, pocket, gain_fn, threshold,
-                   trust=0.7) -> Optional[int]:
-        """Veto the candidate with the largest `gain_fn(steal)` if it reaches
-        `threshold`; otherwise pass."""
+    def best_steal(self, pub, seat, hand, pocket, own_gain, threshold,
+                   trust=0.7, deny_weight=0.0, leaders_only=False
+                   ) -> Optional[int]:
+        """Pick the best veto target, or pass.
+
+        `own_gain(s)` is what adding drift `s` to this bot's own track is
+        worth to its goal. Blocking value: `deny_weight` x the size of a
+        leader's drift when it points away from zero (the veto stops it
+        reaching the leader's track). How the two combine depends on the
+        veto rule:
+          take    own gain + blocking value
+          block   blocking value only (the vetoer receives nothing)
+          choose  max(0, own gain) + blocking value, since a bad steal
+                  can be thrown away after the reveal
+        Vetoes the candidate with the highest value if it reaches
+        `threshold`.
+        """
+        if len(hand) < pub.cfg.veto_cost:
+            return None
+        mode = pub.cfg.veto_mode
         counts = unseen_counts(pub, hand, pocket)
         best, best_gain = None, threshold
         for t in veto_candidates(pub, seat):
-            g = gain_fn(t, steal_value(pub, t, counts, trust), counts)
+            is_leader = t in pub.leaders
+            if leaders_only and not is_leader:
+                continue
+            d = steal_value(pub, t, counts, trust)
+            own = own_gain(d)
+            if mode == "block":
+                own = 0.0
+            elif mode == "choose":
+                own = max(0.0, own)
+            g = own
+            if deny_weight and is_leader and sign(d) == sign(pub.tracks[t]):
+                g += deny_weight * abs(d)
             if g >= best_gain:
                 best, best_gain = t, g
+        self._own_gain = own_gain
         return best
+
+    def keep_steal(self, seat: int, pub: PublicState, target: int,
+                   amount: int) -> bool:
+        """Under the "choose" rule: keep a revealed steal only if it helps
+        the goal this bot vetoed for."""
+        fn = getattr(self, "_own_gain", None)
+        return True if fn is None else fn(amount) > 0
+
+    def veto_discard(self, seat: int, pub: PublicState, hand: tuple,
+                     n: int) -> tuple:
+        """Cards paid to veto: the middle values, keeping the high and low
+        cards that make big drifts possible."""
+        mid = (pub.cfg.hand_lo + pub.cfg.hand_hi) / 2
+        return tuple(sorted(hand, key=lambda c: abs(c - mid))[:n])

@@ -59,6 +59,12 @@ class GameConfig:
     veto_gap: int = 10                 # X: eligible if |track| <= leader's - X
     veto_target: str = "any"           # "any" or "leader"
     double_veto_at: int = 2            # vetoes needed to zero group drift
+    # What a veto does to the vetoer:
+    #   "take"   each vetoer adds the target's drift to its own track
+    #   "block"  the target's drift is cancelled; vetoers receive nothing
+    #   "choose" after the reveal, each vetoer takes the drift or discards it
+    veto_mode: str = "take"
+    veto_cost: int = 0                 # hand cards a vetoer must discard
 
     # --- Final round -----------------------------------------------------------
     final_multiplier: int = 2
@@ -110,6 +116,10 @@ class GameConfig:
             problems.append("n_players must be 2-8")
         if self.min_cards < 0 or self.max_cards < max(1, self.min_cards):
             problems.append("need 0 <= min_cards <= max_cards, max_cards >= 1")
+        if self.veto_mode not in ("take", "block", "choose"):
+            problems.append("veto_mode must be 'take', 'block' or 'choose'")
+        if self.veto_cost < 0:
+            problems.append("veto_cost must be >= 0")
         if self.veto_target not in ("any", "leader"):
             problems.append("veto_target must be 'any' or 'leader'")
         if len(self.hand_deck()) < self.cards_needed():

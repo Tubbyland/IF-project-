@@ -73,6 +73,50 @@ class DoubleVeto(unittest.TestCase):
         self.assertEqual(r.tally, 0)
 
 
+class VetoModes(unittest.TestCase):
+    def test_block_cancels_drift_and_vetoer_gets_nothing(self):
+        cfg = CFG.with_(veto_mode="block")
+        r = resolve([30, 20, 20, 20], {1: 0}, tracks=(15, 2, 0, 0), cfg=cfg)
+        self.assertEqual(r.tracks, [15, 2, 0, 0])
+        self.assertEqual(r.stolen, [])
+        self.assertEqual(r.tally, 10)          # single veto: real total
+
+    def test_block_double_veto_still_zeroes_group_drift(self):
+        cfg = CFG.with_(veto_mode="block")
+        r = resolve([30, 20, 20, 20], {1: 0, 2: 0}, cfg=cfg)
+        self.assertEqual(r.tracks, [0, 0, 0, 0])
+        self.assertEqual(r.tally, 0)
+
+    def test_choose_lets_each_vetoer_decide(self):
+        cfg = CFG.with_(veto_mode="choose")
+        r = resolve_round(cfg, [0] * 4, 0, P, C, [30, 20, 20, 20],
+                          {1: 0, 2: 0}, False, takes={1: True, 2: False})
+        self.assertEqual(r.tracks, [0, 10, 0, 0])
+
+    def test_veto_cost_discards_cards(self):
+        sizes = {}
+
+        class AlwaysVeto(Bot):
+            name = "always"
+
+            def play(self, seat, pub, hand):
+                sizes[(pub.round, seat)] = len(hand)
+                return (sorted(hand)[-1],), 0
+
+            def veto(self, seat, pub, hand, pocket):
+                return next(x for x in pub.leaders if x != seat)
+        cfg = CFG.with_(veto_cost=1, veto_gap=1, bust_limit=1000,
+                        win_threshold=1000)
+        r = play_game(cfg, [AlwaysVeto() for _ in range(4)], seed=4)
+        vetoed = [(rec.round, v) for rec in r.records
+                  for v, t in rec.vetoes.items() if t is not None]
+        self.assertTrue(vetoed)
+        for rnd, v in vetoed:
+            if (rnd + 1, v) in sizes:
+                # played 1, paid 1, drew 1: one card fewer next round
+                self.assertEqual(sizes[(rnd + 1, v)], sizes[(rnd, v)] - 1)
+
+
 class FinalRound(unittest.TestCase):
     def test_own_drift_doubled(self):
         r = resolve([25, 20, 20, 20], final=True)
@@ -210,8 +254,11 @@ class Engine(unittest.TestCase):
 
     def test_all_strategies_play_legal_games(self):
         names = [n for n in STRATEGIES]
-        for n_players in (3, 4, 5):
-            cfg = CFG.with_(n_players=n_players)
+        for n_players, extra in ((3, {}), (4, {}), (5, {}),
+                                 (4, {"veto_mode": "block"}),
+                                 (4, {"veto_mode": "choose"}),
+                                 (4, {"veto_cost": 1})):
+            cfg = CFG.with_(n_players=n_players, **extra)
             for seed in range(40):
                 table = [names[(seed + i) % len(names)]
                          for i in range(n_players)]
