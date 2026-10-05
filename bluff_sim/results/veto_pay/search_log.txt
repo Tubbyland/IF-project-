@@ -1,0 +1,24 @@
+Baseline: default adaptive parameters
+Best response: tuning seats 3, 4
+  generation 1/20: best 0.261  mean 0.185
+  generation 2/20: best 0.305  mean 0.222
+  generation 3/20: best 0.319  mean 0.248
+  generation 4/20: best 0.320  mean 0.260
+  generation 5/20: best 0.317  mean 0.255
+  generation 6/20: best 0.338  mean 0.280
+  generation 7/20: best 0.338  mean 0.299
+  generation 8/20: best 0.334  mean 0.297
+  generation 9/20: best 0.347  mean 0.310
+  generation 10/20: best 0.345  mean 0.310
+  generation 11/20: best 0.370  mean 0.320
+  generation 12/20: best 0.377  mean 0.341
+  generation 13/20: best 0.340  mean 0.307
+  generation 14/20: best 0.357  mean 0.329
+  generation 15/20: best 0.367  mean 0.323
+  generation 16/20: best 0.359  mean 0.329
+  generation 17/20: best 0.371  mean 0.325
+  generation 18/20: best 0.363  mean 0.315
+  generation 19/20: best 0.350  mean 0.314
+  generation 20/20: best 0.356  mean 0.334
+  validated on 10000 new games: best 0.363 (default parameters 0.162)
+Sensitivity of the best-response strategy
