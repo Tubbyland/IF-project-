@@ -226,6 +226,7 @@ class GameResult:
     # (vetoer, target, amount).
     decisive_steals: list[tuple[int, int, int]]
     seed: int = 0
+    rounds_total: int = 0               # rounds the game was scheduled for
 
 
 class RuleViolation(Exception):
@@ -372,7 +373,8 @@ def play_game(cfg: GameConfig, bots: Sequence, seed: int) -> GameResult:
     return GameResult(end_type=end_type, winners=winners,
                       rounds_played=len(pub.history), tracks=pub.tracks,
                       tally=pub.tally, strategies=[b.name for b in bots],
-                      records=pub.history, decisive_steals=decisive, seed=seed)
+                      records=pub.history, decisive_steals=decisive, seed=seed,
+                      rounds_total=cfg.rounds)
 
 
 def _decisive_steals(cfg, pub, totals, vetoes, final, res, takes=None):

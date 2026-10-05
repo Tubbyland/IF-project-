@@ -12,7 +12,8 @@ game:
 
   personal_lo: 15
   personal_hi: 30
-  personal_copies: 2          # reshuffled from used targets when empty
+  personal_copies: 2
+  personal_copies_auto: true  # add copies so the deck never reshuffles
 
   collective_mode: split      # split | continuous
   collective_split: [[70, 82], [98, 110]]

@@ -165,8 +165,13 @@ def tension(results: list[GameResult]) -> dict:
       change from one round to the next.
     ending_spread: how evenly games split between solo, bust and shared
       endings, from 0 (always the same) to 1 (a third each).
+    comeback_half: of solo and bust wins, the share where the winner was
+      not ahead at the halfway point of the game (after round
+      ceil(rounds/2), or the last round played if earlier).
+    final_decided: share of all games won outright (solo or bust) in the
+      last scheduled round.
     """
-    comebacks = decided = 0
+    comebacks = decided = half_comebacks = final_decided = 0
     changes = 0
     for r in results:
         prev = None
@@ -184,13 +189,27 @@ def tension(results: list[GameResult]) -> dict:
             ahead = {i for i, t in enumerate(before) if t == best}
             decided += 1
             comebacks += not set(r.winners) & ahead
+            mid = min(len(r.records) - 1,
+                      (rounds_of(r) + 1) // 2 - 1)
+            at_mid = [abs(t) for t in r.records[mid].tracks_after]
+            best_mid = (max(at_mid) if r.end_type == END_SOLO
+                        else min(at_mid))
+            ahead_mid = {i for i, t in enumerate(at_mid) if t == best_mid}
+            half_comebacks += not set(r.winners) & ahead_mid
+            final_decided += r.records[-1].round == rounds_of(r) - 1
     counts = Counter(r.end_type for r in results)
     probs = [counts[e] / len(results) for e in (END_SOLO, END_BUST,
                                                 END_SHARED)]
     entropy = -sum(p * np.log(p) for p in probs if p > 0) / np.log(3)
     return {"comeback": comebacks / decided if decided else 0.0,
+            "comeback_half": half_comebacks / decided if decided else 0.0,
+            "final_decided": final_decided / len(results),
             "lead_changes": changes / len(results),
             "ending_spread": float(entropy)}
+
+
+def rounds_of(r: GameResult) -> int:
+    return r.rounds_total
 
 
 def dominance_flags(s: Summary) -> list[str]:
@@ -261,7 +280,9 @@ def format_summary(s: Summary, title: str = "") -> str:
     t = s.tension
     lines.append("")
     lines.append("Tension")
-    lines.append(f"  winner came from behind      {_pct(t['comeback'])}")
+    lines.append(f"  winner behind at halfway     {_pct(t['comeback_half'])}")
+    lines.append(f"  winner behind before last   {_pct(t['comeback'])}")
+    lines.append(f"  won outright in final round  {_pct(t['final_decided'])}")
     lines.append(f"  lead changes per game        {t['lead_changes']:.2f}")
     lines.append(f"  ending spread (0-1)          {t['ending_spread']:.2f}")
     lines.append("")

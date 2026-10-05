@@ -111,7 +111,7 @@ class CarefulDrifter(Bot):
 
     Direction: its track's sign; at zero, the side with more tally room.
     Wanted drift: what is left to the threshold (halved in the final round),
-    at most `per_round` per round before the last two rounds.
+    at most a third of the threshold per round before the last two rounds.
     Bust guard: never drifts past the projected tally's room, keeping
     `margin` in reserve; if there is no room it gives up to 3 the other way.
     Clue: truthful, so helpers can absorb its drift.
@@ -132,7 +132,8 @@ class CarefulDrifter(Bot):
             down = drift_room(pub, -1, others, self.margin)
             d = 1 if up >= down else -1
         need = (pub.cfg.win_threshold - abs(t)) / pub.multiplier
-        want = need if pub.rounds_left <= 1 else min(need, self.per_round)
+        per_round = self.per_round * pub.cfg.win_threshold / 30
+        want = need if pub.rounds_left <= 1 else min(need, per_round)
         room = drift_room(pub, d, others, self.margin)
         amount = max(-3, min(want, room))
         cards = pick_total(pub, hand, pub.personal[seat] + d * amount)
@@ -145,10 +146,11 @@ class CarefulDrifter(Bot):
 
 class Opportunist(Bot):
     """Switches goal by standing, re-checked every turn:
-      - drift (as CarefulDrifter, margin 2) when |t| >= 18, or when it leads
-        with |t| >= 12 and at most 2 rounds remain;
-      - anchor when it is strictly closest to zero and someone is 6+ further
-        out;
+      - drift (as CarefulDrifter, margin 2) when |t| >= 60% of the solo
+        threshold, or when it leads with |t| >= 40% and at most 2 rounds
+        remain;
+      - anchor when it is strictly closest to zero and someone is 20% of the
+        threshold further out;
       - otherwise group helper.
     Vetoes by the same goal: drift mode steals outward (gain 4+), anchor mode
     steals inward (gain 3+), helper mode vetoes a leader whose drift points
@@ -159,10 +161,12 @@ class Opportunist(Bot):
     def mode(self, seat, pub):
         a = [abs(x) for x in pub.tracks]
         me = a[seat]
-        if me >= 18 or (pub.rounds_left <= 2 and me == max(a) and me >= 12):
+        w = pub.cfg.win_threshold
+        if me >= 0.6 * w or (pub.rounds_left <= 2 and me == max(a)
+                             and me >= 0.4 * w):
             return "drift"
         others = [x for i, x in enumerate(a) if i != seat]
-        if me < min(others) and max(others) >= me + 6:
+        if me < min(others) and max(others) >= me + 0.2 * w:
             return "anchor"
         return "help"
 

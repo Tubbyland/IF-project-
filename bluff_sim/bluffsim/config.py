@@ -30,6 +30,9 @@ class GameConfig:
     personal_lo: int = 15
     personal_hi: int = 30
     personal_copies: int = 2
+    # If True, copies are raised (never lowered) so a game never needs to
+    # reshuffle the personal target deck.
+    personal_copies_auto: bool = True
 
     # --- Collective Target deck (reshuffled from its discards when empty) ------
     # "split": one copy of each value in each range of `collective_split`.
@@ -97,9 +100,16 @@ class GameConfig:
         return [v for v in self.hand_values()
                 for _ in range(self.effective_hand_copies())]
 
+    def effective_personal_copies(self) -> int:
+        if not self.personal_copies_auto:
+            return self.personal_copies
+        n_values = self.personal_hi - self.personal_lo + 1
+        return max(self.personal_copies,
+                   math.ceil(self.n_players * self.rounds / n_values))
+
     def personal_deck(self) -> list[int]:
         return [v for v in range(self.personal_lo, self.personal_hi + 1)
-                for _ in range(self.personal_copies)]
+                for _ in range(self.effective_personal_copies())]
 
     def collective_deck(self) -> list[int]:
         if self.collective_mode == "split":
@@ -127,6 +137,8 @@ class GameConfig:
                 f"hand deck has {len(self.hand_deck())} cards but a game can "
                 f"need {self.cards_needed()}; raise hand_copies or set "
                 f"hand_copies_auto")
+        if len(self.collective_deck()) < self.rounds:
+            problems.append("collective deck has fewer cards than rounds")
         if not 0 <= self.clue_close < self.clue_much:
             problems.append("need 0 <= clue_close < clue_much")
         if problems:
