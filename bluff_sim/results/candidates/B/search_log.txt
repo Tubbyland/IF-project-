@@ -1,0 +1,42 @@
+Baseline: default adaptive parameters
+Best response: tuning seats 3, 4
+  generation 1/10: best 0.422  mean 0.348
+  generation 2/10: best 0.422  mean 0.369
+  generation 3/10: best 0.417  mean 0.378
+  generation 4/10: best 0.398  mean 0.376
+  generation 5/10: best 0.453  mean 0.405
+  generation 6/10: best 0.470  mean 0.415
+  generation 7/10: best 0.480  mean 0.450
+  generation 8/10: best 0.512  mean 0.453
+  generation 9/10: best 0.516  mean 0.456
+  generation 10/10: best 0.526  mean 0.486
+  validated on 6000 new games: best 0.507 (default parameters 0.389)
+Sensitivity of the best-response strategy
+Self-play
+ self-play iteration 1/3
+  generation 1/6: best 0.610  mean 0.525
+  generation 2/6: best 0.647  mean 0.607
+  generation 3/6: best 0.630  mean 0.567
+  generation 4/6: best 0.633  mean 0.580
+  generation 5/6: best 0.670  mean 0.630
+  generation 6/6: best 0.633  mean 0.597
+  validated on 750 new games: best 0.644 (default parameters 0.579)
+  champion in its own field 0.553; best challenger 0.615 -> new champion
+ self-play iteration 2/3
+  generation 1/6: best 0.633  mean 0.586
+  generation 2/6: best 0.687  mean 0.659
+  generation 3/6: best 0.623  mean 0.601
+  generation 4/6: best 0.607  mean 0.559
+  generation 5/6: best 0.627  mean 0.585
+  generation 6/6: best 0.590  mean 0.556
+  validated on 750 new games: best 0.624 (default parameters 0.561)
+  champion in its own field 0.594; best challenger 0.614 -> new champion
+ self-play iteration 3/3
+  generation 1/6: best 0.660  mean 0.585
+  generation 2/6: best 0.737  mean 0.709
+  generation 3/6: best 0.677  mean 0.645
+  generation 4/6: best 0.660  mean 0.644
+  generation 5/6: best 0.743  mean 0.711
+  generation 6/6: best 0.697  mean 0.674
+  validated on 750 new games: best 0.674 (default parameters 0.567)
+  champion in its own field 0.551; best challenger 0.665 -> new champion

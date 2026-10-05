@@ -1,0 +1,130 @@
+Self-play champion, all seats
+=============================
+Games: 6000    Table: 1:champion, 2:champion, 3:champion, 4:champion
+
+How games end
+  solo win         56.3%
+  bust win         24.9%
+  shared win       18.8%
+  average length  4.86 rounds; 88% reach round 5
+
+Wins by seat (share = ties split evenly; shared wins count for everyone)
+  seat                     any win    solo    bust  shared   share
+  1: champion                40.4%   14.1%    7.4%   18.8%   25.4%
+  2: champion                38.5%   13.0%    6.7%   18.8%   23.8%
+  3: champion                40.1%   15.3%    6.0%   18.8%   25.3%
+  4: champion                40.4%   14.8%    6.8%   18.8%   25.5%
+
+Wins by strategy (per seat it occupies)
+  champion                   39.8%   14.3%    6.7%
+
+Vetoes
+  eligible players per round  0.51
+  eligible players who veto    84.6%
+  rounds with a veto           24.8%
+  vetoes per game             2.11
+  vetoed players hit twice+    32.1%
+  average drift stolen (abs)  12.2
+  games a steal decided        22.9%
+  kingmaking (20+ dump double-vetoed into a vetoer's win): 10 games (0.2%)
+
+Tension
+  winner behind at halfway      70.3%
+  winner behind before last    76.8%
+  won outright in final round   69.4%
+  lead changes per game        2.76
+  ending spread (0-1)          0.90
+
+Distributions
+  per-player drift  mean -0.8  sd 5.6  5/25/50/75/95%: -11 / -4 / +0 / +3 / +8
+  round gap         mean -0.0  sd 7.0  5/25/50/75/95%: -12 / -5 / +0 / +5 / +12
+
+Decisive rounds (largest swing toward the winner)
+
+Seat 1 (champion), bust wins: 447
+  round of the swing     r1: 6%, r2: 4%, r3: 10%, r4: 20%, r5: 61%
+  swing size             mean 9.3
+  was also the last      78%
+  own drift              mean -2.7, mean |drift| 5.2
+  cards played           mean 1.50
+  clue was a lie         77%
+  vetoed someone         10% (mean stolen when it did: -1.5)
+  was vetoed             19%
+  in plain words: kept its own drift to about 5 while others moved away from zero; lied; usually in the round the game ended.
+
+Seat 1 (champion), solo wins: 845
+  round of the swing     r2: 0%, r3: 3%, r4: 8%, r5: 88%
+  swing size             mean 26.5
+  was also the last      97%
+  own drift              mean -7.1, mean |drift| 9.5
+  cards played           mean 1.24
+  clue was a lie         79%
+  vetoed someone         58% (mean stolen when it did: -13.9)
+  was vetoed             10%
+  in plain words: pushed its own track by about 9; vetoed in 58% of them; lied; usually in the round the game ended.
+
+Seat 2 (champion), bust wins: 401
+  round of the swing     r1: 2%, r2: 5%, r3: 7%, r4: 25%, r5: 61%
+  swing size             mean 9.7
+  was also the last      79%
+  own drift              mean -4.0, mean |drift| 6.5
+  cards played           mean 1.37
+  clue was a lie         76%
+  vetoed someone         10% (mean stolen when it did: -2.2)
+  was vetoed             23%
+  in plain words: kept its own drift to about 6 while others moved away from zero; lied; usually in the round the game ended.
+
+Seat 2 (champion), solo wins: 782
+  round of the swing     r2: 1%, r3: 3%, r4: 10%, r5: 86%
+  swing size             mean 25.8
+  was also the last      97%
+  own drift              mean -5.5, mean |drift| 9.9
+  cards played           mean 1.28
+  clue was a lie         77%
+  vetoed someone         51% (mean stolen when it did: -14.1)
+  was vetoed             8%
+  in plain words: pushed its own track by about 10; vetoed in 51% of them; lied; usually in the round the game ended.
+
+Seat 3 (champion), bust wins: 358
+  round of the swing     r1: 1%, r2: 9%, r3: 8%, r4: 18%, r5: 65%
+  swing size             mean 9.5
+  was also the last      77%
+  own drift              mean -2.2, mean |drift| 5.8
+  cards played           mean 1.51
+  clue was a lie         79%
+  vetoed someone         14% (mean stolen when it did: -2.6)
+  was vetoed             24%
+  in plain words: kept its own drift to about 6 while others moved away from zero; lied; usually in the round the game ended.
+
+Seat 3 (champion), solo wins: 920
+  round of the swing     r1: 0%, r3: 2%, r4: 7%, r5: 90%
+  swing size             mean 25.9
+  was also the last      98%
+  own drift              mean -3.7, mean |drift| 9.9
+  cards played           mean 1.42
+  clue was a lie         78%
+  vetoed someone         51% (mean stolen when it did: -15.3)
+  was vetoed             9%
+  in plain words: pushed its own track by about 10; vetoed in 51% of them; lied; usually in the round the game ended.
+
+Seat 4 (champion), bust wins: 407
+  round of the swing     r2: 11%, r3: 16%, r4: 18%, r5: 55%
+  swing size             mean 9.4
+  was also the last      71%
+  own drift              mean -0.2, mean |drift| 6.4
+  cards played           mean 1.64
+  clue was a lie         76%
+  vetoed someone         12% (mean stolen when it did: -4.6)
+  was vetoed             29%
+  in plain words: kept its own drift to about 6 while others moved away from zero; lied; usually in the round the game ended.
+
+Seat 4 (champion), solo wins: 887
+  round of the swing     r1: 0%, r2: 0%, r3: 2%, r4: 10%, r5: 87%
+  swing size             mean 24.8
+  was also the last      97%
+  own drift              mean -1.9, mean |drift| 10.5
+  cards played           mean 1.62
+  clue was a lie         77%
+  vetoed someone         46% (mean stolen when it did: -17.7)
+  was vetoed             8%
+  in plain words: pushed its own track by about 10; vetoed in 46% of them; lied; usually in the round the game ended.

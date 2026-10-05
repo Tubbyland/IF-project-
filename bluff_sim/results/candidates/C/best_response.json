@@ -1,0 +1,39 @@
+{
+ "label": "best_response",
+ "score": 0.339,
+ "params": {
+  "solo_at": 25,
+  "anchor_margin": 8,
+  "aggr_early": 16.008,
+  "aggr_late": 25.293,
+  "late_round": 6,
+  "room_margin": 8.185,
+  "help_weight": 0.719,
+  "lie_rate": 1.0,
+  "lie_size": 3,
+  "veto_threshold": 0.455,
+  "deny_weight": 1.5,
+  "trust": 0.203,
+  "card_cost": -2.617,
+  "extreme_cost": 2.146,
+  "final_solo_at": 3,
+  "final_room_margin": -6.016,
+  "final_help_weight": 0.706,
+  "final_veto_threshold": 5.954,
+  "danger_margin": 8
+ },
+ "description": [
+  "Commits to a solo win once its track is 25+ from zero.",
+  "When chasing it, drifts up to 16 a round before round 6, then up to 25.",
+  "Keeps 8 of room between the projected tally and a bust.",
+  "Anchors at zero when it is closest to zero and someone is 8+ further out.",
+  "Gives 72% weight to closing the group's gap (71% in the final round).",
+  "Lies on 100% of clues, by 3 bands.",
+  "Believes others' clues 20%.",
+  "Vetoes when the steal is worth 0+ to its goal (6+ in the final round); counts blocking a leader at 150% of its size.",
+  "Prefers playing many cards.",
+  "Hoards very high and very low cards.",
+  "Also blocks any player it expects to end the round within 8 of the solo threshold, leader or not.",
+  "In the final round, goes for the solo win if its track is 3+ from zero, keeping -6 of tally room."
+ ]
+}
