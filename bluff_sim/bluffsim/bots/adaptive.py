@@ -23,11 +23,12 @@ would cancel. Vetoes the best candidate if gain >= veto_threshold.
 """
 from __future__ import annotations
 
-import random
-from dataclasses import asdict, dataclass, fields
+from dataclasses import dataclass
+from typing import ClassVar
 
 from .base import (Bot, drift_room, lie, others_drift, pick_total,
                    projected_tally, sign, unseen_counts)
+from .params import TunableParams
 
 # name -> (low, high, is_int)
 BOUNDS = {
@@ -49,11 +50,16 @@ BOUNDS = {
     "final_room_margin": (-10, 15, False),
     "final_help_weight": (0, 1, False),
     "final_veto_threshold": (0, 20, False),
+    # 0: only leaders are blocked. Above 0: also anyone whose track would
+    # end the round within this distance of the solo threshold.
+    "danger_margin": (0, 30, True),
 }
 
 
 @dataclass
-class Params:
+class Params(TunableParams):
+    BOUNDS: ClassVar[dict] = BOUNDS
+
     solo_at: int = 15
     anchor_margin: int = 8
     aggr_early: float = 6.0
@@ -72,46 +78,7 @@ class Params:
     final_room_margin: float = 2.0
     final_help_weight: float = 0.2
     final_veto_threshold: float = 5.0
-
-    def to_dict(self) -> dict:
-        return asdict(self)
-
-    @classmethod
-    def from_dict(cls, d: dict) -> "Params":
-        names = {f.name for f in fields(cls)}
-        return cls(**{k: v for k, v in d.items() if k in names})
-
-    def clipped(self) -> "Params":
-        out = {}
-        for k, v in self.to_dict().items():
-            lo, hi, is_int = BOUNDS[k]
-            v = min(hi, max(lo, v))
-            out[k] = int(round(v)) if is_int else round(float(v), 3)
-        return Params(**out)
-
-    @classmethod
-    def random(cls, rng: random.Random) -> "Params":
-        return cls(**{k: rng.uniform(lo, hi) for k, (lo, hi, _)
-                      in BOUNDS.items()}).clipped()
-
-    def mutate(self, rng: random.Random, rate=0.3, scale=0.15) -> "Params":
-        d = self.to_dict()
-        for k, (lo, hi, _) in BOUNDS.items():
-            if rng.random() < rate:
-                d[k] = d[k] + rng.gauss(0, scale * (hi - lo))
-        return Params(**d).clipped()
-
-    @staticmethod
-    def crossover(a: "Params", b: "Params", rng: random.Random) -> "Params":
-        da, db = a.to_dict(), b.to_dict()
-        return Params(**{k: (da[k] if rng.random() < 0.5 else db[k])
-                         for k in da}).clipped()
-
-    def distance(self, other: "Params") -> float:
-        """Mean absolute difference, each parameter scaled to 0-1."""
-        da, db = self.to_dict(), other.to_dict()
-        return sum(abs(da[k] - db[k]) / (hi - lo)
-                   for k, (lo, hi, _) in BOUNDS.items()) / len(BOUNDS)
+    danger_margin: int = 0
 
     def describe(self) -> list[str]:
         p = self
@@ -156,6 +123,10 @@ class Params:
             out.append("Prefers playing many cards.")
         if p.extreme_cost > 1.5:
             out.append("Hoards very high and very low cards.")
+        if p.danger_margin:
+            out.append(f"Also blocks any player it expects to end the round "
+                       f"within {p.danger_margin} of the solo threshold, "
+                       f"leader or not.")
         out.append(f"In the final round, goes for the solo win if its track "
                    f"is {p.final_solo_at}+ from zero, keeping "
                    f"{p.final_room_margin:.0f} of tally room.")
@@ -235,4 +206,5 @@ class Adaptive(Bot):
         def own(s):
             return (abs(t + s) - abs(t)) if outward else (abs(t) - abs(t + s))
         return self.best_steal(pub, seat, hand, pocket, own, threshold,
-                               p.trust, deny_weight=p.deny_weight)
+                               p.trust, deny_weight=p.deny_weight,
+                               danger_margin=p.danger_margin)

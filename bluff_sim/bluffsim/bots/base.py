@@ -203,14 +203,16 @@ class Bot:
         return clue_for(sum(cards) - pub.personal[seat], pub.cfg)
 
     def best_steal(self, pub, seat, hand, pocket, own_gain, threshold,
-                   trust=0.7, deny_weight=0.0, leaders_only=False
-                   ) -> Optional[int]:
+                   trust=0.7, deny_weight=0.0, leaders_only=False,
+                   danger_margin=0) -> Optional[int]:
         """Pick the best veto target, or pass.
 
         `own_gain(s)` is what adding drift `s` to this bot's own track is
-        worth to its goal. Blocking value: `deny_weight` x the size of a
-        leader's drift when it points away from zero (the veto stops it
-        reaching the leader's track). How the two combine depends on the
+        worth to its goal. Blocking value: `deny_weight` x how far the veto
+        stops a threatening player moving away from zero. A threat is a
+        leader, or (if `danger_margin` > 0) anyone expected to end the
+        round within `danger_margin` of the solo threshold. The expected
+        drift comes from the target's clue, so a lie can hide a threat. How the two combine depends on the
         veto rule:
           take    own gain + blocking value
           block   blocking value only (the vetoer receives nothing)
@@ -235,8 +237,14 @@ class Bot:
             elif mode == "choose":
                 own = max(0.0, own)
             g = own
-            if deny_weight and is_leader and sign(d) == sign(pub.tracks[t]):
-                g += deny_weight * abs(d)
+            if deny_weight:
+                tt = pub.tracks[t]
+                outward = abs(tt + d) - abs(tt)
+                threat = is_leader or (
+                    danger_margin > 0 and abs(tt + d)
+                    >= pub.cfg.win_threshold - danger_margin)
+                if threat and outward > 0:
+                    g += deny_weight * outward
             if g >= best_gain:
                 best, best_gain = t, g
         self._own_gain = own_gain

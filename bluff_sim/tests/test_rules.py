@@ -266,6 +266,20 @@ class Engine(unittest.TestCase):
                 self.assertIn(r.end_type, (END_BUST, END_SOLO, END_SHARED))
                 self.assertLessEqual(r.rounds_played, cfg.rounds)
 
+    def test_bluffer_lies_only_as_configured(self):
+        from bluffsim.bots.bluffer import Bluffer, BluffParams, honest_twin
+        from bluffsim.engine import clue_for
+        cfg = CFG.with_(draw_per_round=2)
+        for p, may_lie in ((honest_twin(BluffParams()), False),
+                           (BluffParams(), True)):
+            lies = 0
+            for seed in range(30):
+                r = play_game(cfg, [Bluffer(p)] + make_table(
+                    ["adaptive"] * 3), seed)
+                for rec in r.records:
+                    lies += rec.clues[0] != clue_for(rec.drifts[0], cfg)
+            self.assertEqual(lies > 0, may_lie)
+
     def test_same_seed_same_game(self):
         table = ["careful_drifter", "anchor", "adaptive", "opportunist"]
         a = play_game(CFG, make_table(table), 42)

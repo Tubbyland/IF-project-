@@ -30,13 +30,16 @@ import numpy as np
 from .bots import make_table
 from .bots.adaptive import Adaptive, Params
 from .config import GameConfig
-from .engine import END_SHARED, play_game
+from .engine import END_SHARED, END_SOLO, play_game
 from .stats import default_workers
 
 
 def _score(r, seat, shared_value):
+    """shared_value < 0 means: count solo wins only."""
     if seat not in r.winners:
         return 0.0
+    if shared_value < 0:
+        return 1.0 if r.end_type == END_SOLO else 0.0
     return shared_value if r.end_type == END_SHARED else 1.0
 
 
@@ -105,14 +108,14 @@ def _seeds(rng: random.Random, n: int) -> list[int]:
     return [rng.randrange(1, 2**31) for _ in range(n)]
 
 
-def genetic_search(evaluate, rng: random.Random, start: list[Params],
+def genetic_search(evaluate, rng: random.Random, start: list,
                    pop: int, gens: int, games: int, validate_games: int,
-                   log=print) -> SearchResult:
+                   log=print, space=Params) -> SearchResult:
     """`evaluate(params_list, seeds) -> scores`. Elitist GA with
     tournament selection, uniform crossover and Gaussian mutation."""
     population = list(start)[:pop]
     while len(population) < pop:
-        population.append(Params.random(rng))
+        population.append(space.random(rng))
     history = []
     scored = []
     elite = max(2, pop // 6)
@@ -133,13 +136,13 @@ def genetic_search(evaluate, rng: random.Random, start: list[Params],
             contenders = rng.sample(range(len(ranked)), 3)
             return ranked[min(contenders)]
         while len(nxt) < pop:
-            child = Params.crossover(pick(), pick(), rng)
+            child = space.crossover(pick(), pick(), rng)
             nxt.append(child.mutate(rng))
         population = nxt
 
     finalists = [population[i] for _, i in scored[:5]]
     seeds = _seeds(rng, validate_games)
-    v = evaluate(finalists + [Params()], seeds)
+    v = evaluate(finalists + [space()], seeds)
     ranked = sorted(zip(v[:-1], range(len(finalists))), reverse=True)
     best_score, bi = ranked[0]
     log(f"  validated on {validate_games} new games: best {best_score:.3f} "
