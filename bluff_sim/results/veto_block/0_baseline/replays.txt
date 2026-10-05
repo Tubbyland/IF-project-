@@ -1,0 +1,665 @@
+Game seed 21005446: shared, winners [1, 2, 3, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 81, personal [18, 16, 20, 17], gap +10; tally +0
+   1 plays [4, 6, 18] = 28, says 'much higher', drift +10
+   2 plays [16] = 16, says 'much lower' (lie; truth close), drift +0
+   3 plays [1, 4, 16] = 21, says 'close', drift +1
+   4 plays [6, 12] = 18, says 'close', drift +1
+   vetoes: none (eligible [])
+   tracks [10, 0, 1, 1], tally +2 (+2)
+Round 2: collective 109, personal [30, 15, 21, 19], gap +24; tally +2
+   2 plays [15] = 15, says 'much higher' (lie; truth close), drift +0
+   3 plays [5, 20] = 25, says 'higher', drift +4
+   4 plays [8, 15] = 23, says 'higher', drift +4
+   1 plays [9, 11, 19] = 39, says 'much higher', drift +9
+   vetoes: none (eligible [2])
+   tracks [19, 0, 5, 5], tally -5 (-7)
+Round 3: collective 102, personal [18, 24, 30, 28], gap +2; tally -5
+   3 plays [10, 11, 13] = 34, says 'higher', drift +4
+   4 plays [8, 8, 13] = 29, says 'close', drift +1
+   1 plays [13, 15] = 28, says 'much higher', drift +10
+   2 plays [6, 18] = 24, says 'much lower' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [29, 0, 9, 6], tally +8 (+13)
+Round 4: collective 108, personal [26, 20, 21, 28], gap +13; tally +8
+   4 plays [3, 7, 20] = 30, says 'close', drift +2
+   1 plays [6, 20] = 26, says 'close', drift +0
+   2 plays [1, 9, 10] = 20, says 'much higher' (lie; truth close), drift +0
+   3 plays [2, 17] = 19, says 'higher' (lie; truth close), drift -2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [29, 0, 7, 8], tally -5 (-13)
+Round 5: collective 73, personal [27, 22, 25, 16], gap -17; tally -5
+   1 plays [1, 4, 16] = 21, says 'lower', drift -6
+   2 plays [10, 12] = 22, says 'much lower' (lie; truth close), drift +0
+   3 plays [3, 19] = 22, says 'lower', drift -3
+   4 plays [1, 14] = 15, says 'close', drift -1
+   vetoes: none (eligible [2, 3, 4])
+   tracks [23, 0, 4, 7], tally +2 (+7)
+Round 6: collective 74, personal [15, 27, 24, 22], gap -14; tally +2
+   2 plays [2, 9, 16] = 27, says 'much lower' (lie; truth close), drift +0
+   3 plays [7, 15] = 22, says 'close', drift -2
+   4 plays [20] = 20, says 'higher' (lie; truth close), drift -2
+   1 plays [10, 14] = 24, says 'much higher', drift +9
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [23, 0, 2, 5], tally +12 (+10)
+Round 7  FINAL (x2): collective 79, personal [23, 29, 19, 25], gap -17; tally +12
+   3 plays [18] = 18, says 'close', drift -1
+   4 plays [18] = 18, says 'lower', drift -7
+   1 plays [2, 9] = 11, says 'much lower', drift -12
+   2 plays [3, 8, 19] = 30, says 'much lower' (lie; truth close), drift +1
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-1, 2, 0, -9], tally +10 (-2)
+
+Game seed 21005474: shared, winners [1, 2, 3, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 99, personal [15, 17, 26, 22], gap +19; tally +0
+   1 plays [13, 14] = 27, says 'much higher', drift +12
+   2 plays [18] = 18, says 'much higher' (lie; truth close), drift +1
+   3 plays [1, 3, 20] = 24, says 'close', drift -2
+   4 plays [5, 18] = 23, says 'close', drift +1
+   vetoes: none (eligible [])
+   tracks [12, 1, -2, 1], tally -7 (-7)
+Round 2: collective 98, personal [17, 29, 26, 24], gap +2; tally -7
+   2 plays [10, 18] = 28, says 'much higher' (lie; truth close), drift -1
+   3 plays [12, 14] = 26, says 'close', drift +0
+   4 plays [1, 9, 16] = 26, says 'lower' (lie; truth close), drift +2
+   1 plays [3, 5, 17] = 25, says 'much higher', drift +8
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [12, 0, -2, 3], tally -8 (-1)
+Round 3: collective 76, personal [28, 27, 25, 27], gap -31; tally -8
+   3 plays [19] = 19, says 'lower', drift -6
+   4 plays [6, 16] = 22, says 'lower', drift -5
+   1 plays [3, 15, 16] = 34, says 'higher', drift +6
+   2 plays [3, 9, 15] = 27, says 'much lower' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3])
+   tracks [18, 0, -8, -2], tally +18 (+26)
+Round 4: collective 102, personal [23, 18, 22, 16], gap +23; tally +18
+   4 plays [4, 13] = 17, says 'close', drift +1
+   1 plays [2, 11, 19] = 32, says 'much higher', drift +9
+   2 plays [5, 13] = 18, says 'much lower' (lie; truth close), drift +0
+   3 plays [10, 12] = 22, says 'close', drift +0
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [18, 0, -8, -1], tally -4 (-22)
+Round 5: collective 105, personal [19, 30, 23, 30], gap +3; tally -4
+   1 plays [6, 11] = 17, says 'close', drift -2
+   2 plays [9, 20] = 29, says 'much higher' (lie; truth close), drift -1
+   3 plays [10, 15] = 25, says 'lower' (lie; truth close), drift +2
+   4 plays [8, 8, 14] = 30, says 'lower' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [16, -1, -6, -1], tally -8 (-4)
+Round 6: collective 101, personal [29, 18, 21, 20], gap +13; tally -8
+   2 plays [4, 15] = 19, says 'much higher' (lie; truth close), drift +1
+   3 plays [7, 17] = 24, says 'close' (lie; truth higher), drift +3
+   4 plays [6, 7, 12] = 25, says 'higher', drift +5
+   1 plays [6, 17] = 23, says 'lower', drift -6
+   vetoes: none (eligible [2, 3, 4])
+   tracks [10, 0, -3, 4], tally -18 (-10)
+Round 7  FINAL (x2): collective 79, personal [21, 15, 25, 28], gap -10; tally -18
+   3 plays [8, 19] = 27, says 'close', drift +2
+   4 plays [9, 18] = 27, says 'close', drift -1
+   1 plays [2, 7] = 9, says 'much lower', drift -12
+   2 plays [1, 2, 11] = 14, says 'much higher' (lie; truth close), drift -1
+   vetoes: none (eligible [2])
+   tracks [-14, -2, 1, 2], tally -20 (-2)
+
+Game seed 21003937: bust, winners [1]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 103, personal [23, 28, 26, 18], gap +8; tally +0
+   1 plays [13, 20] = 33, says 'much higher', drift +10
+   2 plays [2, 11, 15] = 28, says 'much higher' (lie; truth close), drift +0
+   3 plays [11, 12] = 23, says 'lower', drift -3
+   4 plays [3, 13] = 16, says 'close', drift -2
+   vetoes: none (eligible [])
+   tracks [10, 0, -3, -2], tally -3 (-3)
+Round 2: collective 99, personal [23, 27, 29, 22], gap -2; tally -3
+   2 plays [4, 6, 8] = 18, says 'much higher' (lie; truth much lower), drift -9
+   3 plays [2, 8, 16] = 26, says 'lower', drift -3
+   4 plays [10, 11] = 21, says 'close', drift -1
+   1 plays [9, 9, 12] = 30, says 'higher', drift +7
+   vetoes: none (eligible [2])
+   tracks [17, -9, -6, -3], tally -7 (-4)
+Round 3: collective 70, personal [24, 25, 27, 16], gap -22; tally -7
+   3 plays [7, 15] = 22, says 'lower', drift -5
+   4 plays [15] = 15, says 'close', drift -1
+   1 plays [3, 8, 16] = 27, says 'higher', drift +3
+   2 plays [1, 11, 13] = 25, says 'much lower' (lie; truth close), drift +0
+   vetoes: none (eligible [3, 4])
+   tracks [20, -9, -11, -4], tally +12 (+19)
+Round 4: collective 82, personal [26, 16, 18, 15], gap +7; tally +12
+   4 plays [17] = 17, says 'close', drift +2
+   1 plays [1, 5, 20] = 26, says 'close', drift +0
+   2 plays [12, 12] = 24, says 'much lower' (lie; truth much higher), drift +8
+   3 plays [19] = 19, says 'close', drift +1
+   vetoes: none (eligible [2, 4])
+   tracks [20, -1, -10, -2], tally +16 (+4)
+Round 5: collective 71, personal [30, 20, 21, 30], gap -30; tally +16
+   1 plays [5, 20] = 25, says 'lower', drift -5
+   2 plays [2, 6] = 8, says 'much lower', drift -12
+   3 plays [5, 6] = 11, says 'much lower', drift -10
+   4 plays [4, 9, 10] = 23, says 'lower', drift -7
+   vetoes: none (eligible [2, 3, 4])
+   tracks [15, -13, -20, -9], tally +12 (-4)
+Round 6: collective 110, personal [21, 19, 19, 17], gap +34; tally +12
+   2 plays [3, 6] = 9, says 'much higher' (lie; truth much lower), drift -10
+   3 plays [19] = 19, says 'close', drift +0
+   4 plays [10, 18] = 28, says 'much higher', drift +11
+   1 plays [1, 5] = 6, says 'much lower', drift -15
+   vetoes: none (eligible [4])
+   tracks [0, -23, -20, 2], tally -36 (-48)
+
+Game seed 21006150: bust, winners [1, 2]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 102, personal [17, 24, 29, 29], gap +3; tally +0
+   1 plays [10, 18] = 28, says 'much higher', drift +11
+   2 plays [4, 20] = 24, says 'much lower' (lie; truth close), drift +0
+   3 plays [12, 18] = 30, says 'close', drift +1
+   4 plays [14, 16] = 30, says 'lower' (lie; truth close), drift +1
+   vetoes: none (eligible [])
+   tracks [11, 0, 1, 1], tally +10 (+10)
+Round 2: collective 103, personal [15, 30, 23, 19], gap +16; tally +10
+   2 plays [9, 20] = 29, says 'much higher' (lie; truth close), drift -1
+   3 plays [11, 13] = 24, says 'close', drift +1
+   4 plays [1, 19] = 20, says 'close', drift +1
+   1 plays [5, 7, 11] = 23, says 'much higher', drift +8
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [11, -1, 2, 2], tally -5 (-15)
+Round 3: collective 98, personal [28, 21, 25, 28], gap -4; tally -5
+   3 plays [6, 18] = 24, says 'close', drift -1
+   4 plays [3, 6, 20] = 29, says 'close', drift +1
+   1 plays [3, 13, 15] = 31, says 'higher', drift +3
+   2 plays [11, 12] = 23, says 'much lower' (lie; truth close), drift +2
+   vetoes: none (eligible [2])
+   tracks [14, 1, 1, 3], tally +4 (+9)
+Round 4: collective 101, personal [26, 25, 16, 18], gap +16; tally +4
+   4 plays [7, 15] = 22, says 'higher', drift +4
+   1 plays [1, 3, 8] = 12, says 'much lower', drift -14
+   2 plays [12, 12] = 24, says 'much higher' (lie; truth close), drift -1
+   3 plays [4, 14] = 18, says 'lower' (lie; truth close), drift +2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [0, 0, 3, 7], tally -21 (-25)
+
+Game seed 21003039: solo, winners [1]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 71, personal [27, 26, 15, 25], gap -22; tally +0
+   1 plays [16] = 16, says 'much lower', drift -11
+   2 plays [12, 13] = 25, says 'much lower' (lie; truth close), drift -1
+   3 plays [2, 13] = 15, says 'higher' (lie; truth close), drift +0
+   4 plays [10, 15] = 25, says 'higher' (lie; truth close), drift +0
+   vetoes: none (eligible [])
+   tracks [-11, -1, 0, 0], tally +10 (+10)
+Round 2: collective 110, personal [18, 21, 24, 22], gap +25; tally +10
+   2 plays [6, 16] = 22, says 'much higher' (lie; truth close), drift +1
+   3 plays [1, 8, 17] = 26, says 'lower' (lie; truth close), drift +2
+   4 plays [7, 17] = 24, says 'close', drift +2
+   1 plays [10] = 10, says 'much lower', drift -8
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-11, 0, 2, 2], tally -10 (-20)
+Round 3: collective 109, personal [28, 16, 19, 20], gap +26; tally -10
+   3 plays [5, 5, 20] = 30, says 'much higher', drift +11
+   4 plays [13, 13] = 26, says 'higher', drift +6
+   1 plays [3, 8, 16] = 27, says 'close', drift -1
+   2 plays [1, 15] = 16, says 'much higher' (lie; truth close), drift +0
+   vetoes: none (eligible [2])
+   tracks [-12, 0, 13, 8], tally -20 (-10)
+Round 4: collective 75, personal [27, 29, 28, 17], gap -26; tally -20
+   4 plays [2, 4, 9] = 15, says 'close', drift -2
+   1 plays [3, 14] = 17, says 'much lower', drift -10
+   2 plays [11, 18] = 29, says 'much higher' (lie; truth close), drift +0
+   3 plays [2, 4, 19] = 25, says 'lower', drift -3
+   vetoes: none (eligible [2])
+   tracks [-22, 0, 10, 6], tally -9 (+11)
+Round 5: collective 79, personal [16, 30, 29, 23], gap -19; tally -9
+   1 plays [2, 6] = 8, says 'much lower', drift -8
+   2 plays [12, 18] = 30, says 'much lower' (lie; truth close), drift +0
+   3 plays [12, 19] = 31, says 'lower' (lie; truth close), drift +2
+   4 plays [5, 20] = 25, says 'close', drift +2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-30, 0, 12, 8], tally +6 (+15)
+
+Game seed 21003042: solo, winners [1]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 76, personal [30, 23, 26, 25], gap -28; tally +0
+   1 plays [1, 5, 13] = 19, says 'much lower', drift -11
+   2 plays [6, 7, 10] = 23, says 'much lower' (lie; truth close), drift +0
+   3 plays [2, 5, 14] = 21, says 'lower', drift -5
+   4 plays [3, 8, 10] = 21, says 'lower', drift -4
+   vetoes: none (eligible [])
+   tracks [-11, 0, -5, -4], tally +8 (+8)
+Round 2: collective 98, personal [27, 17, 20, 28], gap +6; tally +8
+   2 plays [17] = 17, says 'much lower' (lie; truth close), drift +0
+   3 plays [3, 10, 10] = 23, says 'higher', drift +3
+   4 plays [9, 20] = 29, says 'lower' (lie; truth close), drift +1
+   1 plays [17] = 17, says 'much lower', drift -10
+   vetoes: none (eligible [2])
+   tracks [-21, 0, -2, -3], tally -4 (-12)
+Round 3: collective 75, personal [24, 20, 18, 17], gap -4; tally -4
+   3 plays [4, 14] = 18, says 'close', drift +0
+   4 plays [16] = 16, says 'close', drift -1
+   1 plays [5, 11] = 16, says 'much lower', drift -8
+   2 plays [20] = 20, says 'much higher' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-29, 0, -2, -4], tally -9 (-5)
+Round 4: collective 101, personal [25, 18, 21, 24], gap +13; tally -9
+   4 plays [7, 11, 13] = 31, says 'higher', drift +7
+   1 plays [7, 18] = 25, says 'close', drift +0
+   2 plays [1, 4, 13] = 18, says 'much higher' (lie; truth close), drift +0
+   3 plays [2, 19] = 21, says 'lower' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-29, 0, -2, 3], tally -15 (-6)
+Round 5: collective 82, personal [27, 29, 22, 26], gap -22; tally -15
+   1 plays [7, 19] = 26, says 'close', drift -1
+   2 plays [2, 11, 16] = 29, says 'much lower' (lie; truth close), drift +0
+   3 plays [1, 4, 13] = 18, says 'close' (lie; truth lower), drift -4
+   4 plays [8, 18] = 26, says 'close', drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-30, 0, -6, 3], tally +2 (+17)
+
+Game seed 21001103: bust, winners [2]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 98, personal [27, 29, 28, 29], gap -15; tally +0
+   1 plays [17] = 17, says 'much lower', drift -10
+   2 plays [5, 10, 14] = 29, says 'much higher' (lie; truth close), drift +0
+   3 plays [1, 20] = 21, says 'lower', drift -7
+   4 plays [7, 9, 10] = 26, says 'lower', drift -3
+   vetoes: none (eligible [])
+   tracks [-10, 0, -7, -3], tally -5 (-5)
+Round 2: collective 99, personal [18, 30, 28, 30], gap -7; tally -5
+   2 plays [13, 18] = 31, says 'much lower' (lie; truth close), drift +1
+   3 plays [9, 9, 15] = 33, says 'higher', drift +5
+   4 plays [3, 3, 13] = 19, says 'much lower', drift -11
+   1 plays [4, 4, 7] = 15, says 'lower', drift -3
+   vetoes: none (eligible [2])
+   tracks [-13, 1, -2, -14], tally -6 (-1)
+Round 3: collective 71, personal [21, 15, 24, 16], gap -5; tally -6
+   3 plays [4, 19] = 23, says 'close', drift -1
+   4 plays [16] = 16, says 'close', drift +0
+   1 plays [11] = 11, says 'much lower', drift -10
+   2 plays [14] = 14, says 'much higher' (lie; truth close), drift -1
+   vetoes: none (eligible [2, 3])
+   tracks [-23, 0, -3, -14], tally -13 (-7)
+Round 4: collective 103, personal [22, 25, 21, 17], gap +18; tally -13
+   4 plays [13, 14] = 27, says 'much higher', drift +10
+   1 plays [6, 20] = 26, says 'higher', drift +4
+   2 plays [5, 10, 11] = 26, says 'much higher' (lie; truth close), drift +1
+   3 plays [5, 18] = 23, says 'close', drift +2
+   vetoes: none (eligible [2, 3])
+   tracks [-19, 1, -1, -4], tally -14 (-1)
+Round 5: collective 74, personal [25, 15, 23, 20], gap -9; tally -14
+   1 plays [16] = 16, says 'much lower', drift -9
+   2 plays [18] = 18, says 'much higher' (lie; truth higher), drift +3
+   3 plays [15, 16] = 31, says 'much higher', drift +8
+   4 plays [3, 20] = 23, says 'higher', drift +3
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-19, 4, 7, -1], tally +9 (+23)
+Round 6: collective 108, personal [24, 17, 19, 19], gap +29; tally +9
+   2 plays [13] = 13, says 'much higher' (lie; truth lower), drift -4
+   3 plays [7, 17] = 24, says 'higher', drift +5
+   4 plays [2, 2, 17] = 21, says 'higher' (lie; truth close), drift +2
+   1 plays [15] = 15, says 'much lower', drift -9
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-19, 0, 12, 1], tally -17 (-26)
+Round 7  FINAL (x2): collective 101, personal [16, 20, 22, 26], gap +17; tally -17
+   3 plays [8, 8, 18] = 34, says 'much higher', drift +12
+   4 plays [3, 9, 12] = 24, says 'close', drift -2
+   1 plays [2, 16] = 18, says 'close', drift +2
+   2 plays [19] = 19, says 'much higher' (lie; truth close), drift -1
+   vetoes: none (eligible [2, 4])
+   tracks [-15, -2, 36, -3], tally -23 (-6)
+
+Game seed 21001106: bust, winners [2]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 105, personal [19, 22, 30, 19], gap +15; tally +0
+   1 plays [13, 16] = 29, says 'much higher', drift +10
+   2 plays [6, 16] = 22, says 'much higher' (lie; truth close), drift +0
+   3 plays [15, 17] = 32, says 'close', drift +2
+   4 plays [1, 17] = 18, says 'close', drift -1
+   vetoes: none (eligible [])
+   tracks [10, 0, 2, -1], tally -4 (-4)
+Round 2: collective 102, personal [18, 21, 17, 24], gap +22; tally -4
+   2 plays [1, 19] = 20, says 'much higher' (lie; truth close), drift -1
+   3 plays [8, 14] = 22, says 'close' (lie; truth higher), drift +5
+   4 plays [10, 19] = 29, says 'higher', drift +5
+   1 plays [9, 18] = 27, says 'much higher', drift +9
+   vetoes: none (eligible [2])
+   tracks [19, -1, 7, 4], tally -8 (-4)
+Round 3: collective 73, personal [29, 16, 20, 17], gap -9; tally -8
+   3 plays [11, 12] = 23, says 'higher', drift +3
+   4 plays [16] = 16, says 'close', drift -1
+   1 plays [9, 11, 14] = 34, says 'higher', drift +5
+   2 plays [8, 9] = 17, says 'much lower' (lie; truth close), drift +1
+   vetoes: none (eligible [2, 3, 4])
+   tracks [24, 0, 10, 3], tally +9 (+17)
+Round 4: collective 79, personal [29, 22, 23, 27], gap -22; tally +9
+   4 plays [7, 10] = 17, says 'much lower', drift -10
+   1 plays [5, 5, 6] = 16, says 'much lower', drift -13
+   2 plays [3, 19] = 22, says 'much lower' (lie; truth close), drift +0
+   3 plays [2, 2, 17] = 21, says 'higher' (lie; truth close), drift -2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [11, 0, 8, -7], tally +6 (-3)
+Round 5: collective 101, personal [15, 18, 26, 15], gap +27; tally +6
+   1 plays [2, 5, 7] = 14, says 'close', drift -1
+   2 plays [4, 6, 6] = 16, says 'much higher' (lie; truth close), drift -2
+   3 plays [1, 8, 14] = 23, says 'lower', drift -3
+   4 plays [15] = 15, says 'close', drift +0
+   vetoes: none (eligible [2])
+   tracks [10, -2, 5, -7], tally -27 (-33)
+
+Game seed 21002858: solo, winners [2]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 102, personal [22, 26, 28, 22], gap +4; tally +0
+   1 plays [2, 12, 18] = 32, says 'much higher', drift +10
+   2 plays [3, 8, 14] = 25, says 'much lower' (lie; truth close), drift -1
+   3 plays [6, 7, 7] = 20, says 'lower' (lie; truth much lower), drift -8
+   4 plays [4, 17] = 21, says 'higher' (lie; truth close), drift -1
+   vetoes: none (eligible [])
+   tracks [10, -1, -8, -1], tally -4 (-4)
+Round 2: collective 103, personal [19, 25, 30, 21], gap +8; tally -4
+   2 plays [2, 5, 7] = 14, says 'much higher' (lie; truth much lower), drift -11
+   3 plays [2, 12, 16] = 30, says 'close', drift +0
+   4 plays [10, 11] = 21, says 'close', drift +0
+   1 plays [3, 8, 17] = 28, says 'much higher', drift +9
+   vetoes: none (eligible [])
+   tracks [19, -12, -8, -1], tally -14 (-10)
+Round 3: collective 77, personal [18, 29, 24, 20], gap -14; tally -14
+   3 plays [3, 6, 14] = 23, says 'close', drift -1
+   4 plays [6, 14] = 20, says 'close', drift +0
+   1 plays [2, 8, 15] = 25, says 'higher', drift +7
+   2 plays [1, 1, 6] = 8, says 'much higher' (lie; truth much lower), drift -21
+   vetoes: none (eligible [3, 4])
+   tracks [26, -33, -9, -1], tally -15 (-1)
+
+Game seed 21003973: solo, winners [2]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 109, personal [29, 29, 15, 24], gap +12; tally +0
+   1 plays [20, 20] = 40, says 'much higher', drift +11
+   2 plays [6, 6, 12] = 24, says 'much higher' (lie; truth lower), drift -5
+   3 plays [14] = 14, says 'close', drift -1
+   4 plays [10, 14] = 24, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [11, -5, -1, 0], tally -7 (-7)
+Round 2: collective 102, personal [23, 19, 20, 17], gap +23; tally -7
+   2 plays [4, 5, 5] = 14, says 'much higher' (lie; truth lower), drift -5
+   3 plays [12, 13] = 25, says 'higher', drift +5
+   4 plays [1, 8, 10] = 19, says 'close', drift +2
+   1 plays [14, 19] = 33, says 'much higher', drift +10
+   vetoes: none (eligible [3, 4])
+   tracks [21, -10, 4, 2], tally -18 (-11)
+Round 3: collective 79, personal [23, 27, 30, 28], gap -29; tally -18
+   3 plays [10, 17] = 27, says 'lower', drift -3
+   4 plays [6, 18] = 24, says 'lower', drift -4
+   1 plays [15, 17] = 32, says 'much higher', drift +9
+   2 plays [1, 1, 4] = 6, says 'much higher' (lie; truth much lower), drift -21
+   vetoes: none (eligible [2, 3, 4])
+   tracks [30, -31, 1, -2], tally -8 (+10)
+
+Game seed 21008066: bust, winners [3]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 77, personal [17, 25, 27, 30], gap -22; tally +0
+   1 plays [6] = 6, says 'much lower', drift -11
+   2 plays [1, 4, 20] = 25, says 'much lower' (lie; truth close), drift +0
+   3 plays [14, 15] = 29, says 'lower' (lie; truth close), drift +2
+   4 plays [5, 5, 19] = 29, says 'higher' (lie; truth close), drift -1
+   vetoes: none (eligible [])
+   tracks [-11, 0, 2, -1], tally +12 (+12)
+Round 2: collective 82, personal [22, 29, 16, 27], gap -12; tally +12
+   2 plays [12, 17] = 29, says 'much lower' (lie; truth close), drift +0
+   3 plays [3, 4, 6] = 13, says 'lower', drift -3
+   4 plays [10, 15] = 25, says 'close', drift -2
+   1 plays [2, 10] = 12, says 'much lower', drift -10
+   vetoes: none (eligible [2, 4])
+   tracks [-21, 0, -1, -3], tally +9 (-3)
+Round 3: collective 99, personal [29, 19, 25, 18], gap +8; tally +9
+   3 plays [1, 3, 20] = 24, says 'close', drift -1
+   4 plays [17] = 17, says 'close', drift -1
+   1 plays [9, 11] = 20, says 'much lower', drift -9
+   2 plays [7, 12] = 19, says 'much higher' (lie; truth close), drift +0
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-21, 0, -2, -4], tally -1 (-10)
+Round 4: collective 108, personal [15, 17, 24, 22], gap +30; tally -1
+   4 plays [3, 8, 20] = 31, says 'much higher', drift +9
+   1 plays [14] = 14, says 'close', drift -1
+   2 plays [16] = 16, says 'much higher' (lie; truth close), drift -1
+   3 plays [9, 17] = 26, says 'close', drift +2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-22, -1, 0, 5], tally -22 (-21)
+
+Game seed 21008286: bust, winners [3, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 74, personal [16, 23, 18, 22], gap -5; tally +0
+   1 plays [8] = 8, says 'much lower', drift -8
+   2 plays [7, 15] = 22, says 'much higher' (lie; truth close), drift -1
+   3 plays [6, 11] = 17, says 'close', drift -1
+   4 plays [1, 1, 19] = 21, says 'close', drift -1
+   vetoes: none (eligible [])
+   tracks [-8, -1, -1, -1], tally -6 (-6)
+Round 2: collective 77, personal [24, 30, 27, 25], gap -29; tally -6
+   2 plays [10, 20] = 30, says 'much lower' (lie; truth close), drift +0
+   3 plays [2, 20] = 22, says 'lower', drift -5
+   4 plays [13, 13] = 26, says 'close', drift +1
+   1 plays [2, 12] = 14, says 'much lower', drift -10
+   vetoes: none (eligible [])
+   tracks [-18, -1, -6, 0], tally +9 (+15)
+Round 3: collective 110, personal [20, 15, 28, 29], gap +18; tally +9
+   3 plays [15, 15] = 30, says 'close', drift +2
+   4 plays [4, 8, 12] = 24, says 'lower', drift -5
+   1 plays [17] = 17, says 'lower', drift -3
+   2 plays [17] = 17, says 'much higher' (lie; truth close), drift +2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-21, 1, -4, -5], tally -13 (-22)
+Round 4: collective 102, personal [19, 15, 16, 24], gap +28; tally -13
+   4 plays [2, 12, 15] = 29, says 'higher', drift +5
+   1 plays [9, 13] = 22, says 'higher', drift +3
+   2 plays [4, 4, 5] = 13, says 'much higher' (lie; truth close), drift -2
+   3 plays [2, 18] = 20, says 'higher', drift +4
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-18, -1, 0, 0], tally -31 (-18)
+
+Game seed 21009987: solo, winners [3]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 109, personal [21, 26, 25, 20], gap +17; tally +0
+   1 plays [11, 20] = 31, says 'much higher', drift +10
+   2 plays [3, 19] = 22, says 'much higher' (lie; truth lower), drift -4
+   3 plays [5, 6, 7] = 18, says 'close' (lie; truth lower), drift -7
+   4 plays [8, 12] = 20, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [10, -4, -7, 0], tally -18 (-18)
+Round 2: collective 72, personal [27, 25, 22, 27], gap -29; tally -18
+   2 plays [14, 17] = 31, says 'much lower' (lie; truth higher), drift +6
+   3 plays [2, 5, 10] = 17, says 'lower', drift -5
+   4 plays [1, 6, 20] = 27, says 'close', drift +0
+   1 plays [15, 20] = 35, says 'much higher', drift +8
+   vetoes: none (eligible [4])
+   tracks [18, 2, -12, 0], tally +20 (+38)
+Round 3: collective 78, personal [24, 18, 29, 17], gap -10; tally +20
+   3 plays [1, 14] = 15, says 'much lower', drift -14
+   4 plays [12] = 12, says 'lower', drift -5
+   1 plays [13, 16] = 29, says 'higher', drift +5
+   2 plays [17] = 17, says 'much lower' (lie; truth close), drift -1
+   vetoes: none (eligible [2, 4])
+   tracks [23, 1, -26, -5], tally +15 (-5)
+Round 4: collective 71, personal [15, 17, 19, 20], gap +0; tally +15
+   4 plays [15] = 15, says 'lower', drift -5
+   1 plays [3, 19] = 22, says 'higher', drift +7
+   2 plays [1, 2, 12] = 15, says 'much lower' (lie; truth close), drift -2
+   3 plays [13] = 13, says 'close' (lie; truth lower), drift -6
+   vetoes: none (eligible [2, 4])
+   tracks [30, -1, -32, -10], tally +9 (-6)
+
+Game seed 21000507: solo, winners [3, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 100, personal [25, 21, 20, 22], gap +12; tally +0
+   1 plays [7, 13, 15] = 35, says 'much higher', drift +10
+   2 plays [2, 3, 14] = 19, says 'much higher' (lie; truth close), drift -2
+   3 plays [4, 11] = 15, says 'lower', drift -5
+   4 plays [18] = 18, says 'close' (lie; truth lower), drift -4
+   vetoes: none (eligible [])
+   tracks [10, -2, -5, -4], tally -13 (-13)
+Round 2: collective 81, personal [17, 24, 15, 27], gap -2; tally -13
+   2 plays [12, 16] = 28, says 'much higher' (lie; truth higher), drift +4
+   3 plays [7, 9] = 16, says 'close', drift +1
+   4 plays [13, 15] = 28, says 'lower' (lie; truth close), drift +1
+   1 plays [5, 8, 11] = 24, says 'higher', drift +7
+   vetoes: none (eligible [])
+   tracks [17, 2, -4, -3], tally +2 (+15)
+Round 3: collective 71, personal [23, 24, 28, 18], gap -22; tally +2
+   3 plays [2, 7, 11] = 20, says 'much lower', drift -8
+   4 plays [13] = 13, says 'close' (lie; truth lower), drift -5
+   1 plays [9, 15] = 24, says 'close', drift +1
+   2 plays [2, 4, 9] = 15, says 'much lower', drift -9
+   vetoes: none (eligible [2, 3, 4])
+   tracks [18, -7, -12, -8], tally +3 (+1)
+Round 4: collective 78, personal [21, 22, 29, 28], gap -22; tally +3
+   4 plays [9, 12] = 21, says 'lower', drift -7
+   1 plays [5, 14] = 19, says 'close', drift -2
+   2 plays [1, 12, 14] = 27, says 'much lower' (lie; truth higher), drift +5
+   3 plays [8, 18] = 26, says 'lower', drift -3
+   vetoes: none (eligible [2, 4])
+   tracks [16, -2, -15, -15], tally +18 (+15)
+Round 5: collective 74, personal [19, 26, 25, 30], gap -26; tally +18
+   1 plays [1, 3, 6] = 10, says 'much lower', drift -9
+   2 plays [4, 17] = 21, says 'much lower' (lie; truth lower), drift -5
+   3 plays [10] = 10, says 'lower' (lie; truth much lower), drift -15
+   4 plays [15] = 15, says 'much lower', drift -15
+   vetoes: none (eligible [2])
+   tracks [7, -7, -30, -30], tally +0 (-18)
+
+Game seed 21002886: bust, winners [2, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 71, personal [21, 15, 15, 21], gap -1; tally +0
+   1 plays [11] = 11, says 'much lower', drift -10
+   2 plays [3, 12] = 15, says 'much higher' (lie; truth close), drift +0
+   3 plays [7, 9] = 16, says 'lower' (lie; truth close), drift +1
+   4 plays [4, 18] = 22, says 'close', drift +1
+   vetoes: none (eligible [])
+   tracks [-10, 0, 1, 1], tally -7 (-7)
+Round 2: collective 109, personal [23, 22, 30, 24], gap +10; tally -7
+   2 plays [3, 20] = 23, says 'much higher' (lie; truth close), drift +1
+   3 plays [7, 9, 19] = 35, says 'higher', drift +5
+   4 plays [10, 16] = 26, says 'close', drift +2
+   1 plays [5, 8] = 13, says 'much lower', drift -10
+   vetoes: none (eligible [2])
+   tracks [-20, 1, 6, 3], tally -19 (-12)
+Round 3: collective 77, personal [18, 30, 26, 23], gap -20; tally -19
+   3 plays [1, 10, 12] = 23, says 'lower', drift -3
+   4 plays [1, 4, 18] = 23, says 'close', drift +0
+   1 plays [8] = 8, says 'much lower', drift -10
+   2 plays [3, 10, 16] = 29, says 'much higher' (lie; truth close), drift -1
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-20, 0, 3, 3], tally -3 (+16)
+Round 4: collective 99, personal [16, 17, 17, 26], gap +23; tally -3
+   4 plays [2, 6, 14] = 22, says 'lower', drift -4
+   1 plays [4, 15] = 19, says 'higher', drift +3
+   2 plays [4, 12] = 16, says 'much higher' (lie; truth close), drift -1
+   3 plays [20] = 20, says 'higher', drift +3
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-17, -1, 6, -1], tally -25 (-22)
+
+Game seed 21002967: bust, winners [3, 4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 81, personal [21, 20, 20, 29], gap -9; tally +0
+   1 plays [15] = 15, says 'lower', drift -6
+   2 plays [8, 11] = 19, says 'much lower' (lie; truth close), drift -1
+   3 plays [6, 16] = 22, says 'close', drift +2
+   4 plays [10, 19] = 29, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [-6, -1, 2, 0], tally +4 (+4)
+Round 2: collective 76, personal [18, 17, 22, 24], gap -5; tally +4
+   2 plays [17] = 17, says 'much lower' (lie; truth close), drift +0
+   3 plays [4, 18] = 22, says 'lower' (lie; truth close), drift +0
+   4 plays [8, 18] = 26, says 'close', drift +2
+   1 plays [10] = 10, says 'much lower', drift -8
+   vetoes: none (eligible [])
+   tracks [-14, -1, 2, 2], tally +3 (-1)
+Round 3: collective 105, personal [30, 23, 16, 23], gap +13; tally +3
+   3 plays [1, 5, 13] = 19, says 'higher', drift +3
+   4 plays [11, 12] = 23, says 'close', drift +0
+   1 plays [20] = 20, says 'much lower', drift -10
+   2 plays [6, 6, 8] = 20, says 'much higher' (lie; truth lower), drift -3
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [-14, -4, 5, 2], tally -10 (-13)
+Round 4: collective 103, personal [19, 27, 19, 25], gap +13; tally -10
+   4 plays [14, 17] = 31, says 'higher', drift +6
+   1 plays [4, 18] = 22, says 'higher', drift +3
+   2 plays [5, 5, 5] = 15, says 'much higher' (lie; truth much lower), drift -12
+   3 plays [9, 13] = 22, says 'higher', drift +3
+   vetoes: none (eligible [2, 4])
+   tracks [-11, -16, 8, 8], tally -23 (-13)
+
+Game seed 21001778: solo, winners [4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 109, personal [15, 29, 19, 28], gap +18; tally +0
+   1 plays [7, 17] = 24, says 'much higher', drift +9
+   2 plays [8, 20] = 28, says 'much higher' (lie; truth close), drift -1
+   3 plays [1, 19] = 20, says 'close', drift +1
+   4 plays [9, 19] = 28, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [9, -1, 1, 0], tally -9 (-9)
+Round 2: collective 81, personal [21, 16, 15, 26], gap +3; tally -9
+   2 plays [7, 10] = 17, says 'much higher' (lie; truth close), drift +1
+   3 plays [16] = 16, says 'close', drift +1
+   4 plays [11, 16] = 27, says 'higher' (lie; truth close), drift +1
+   1 plays [14, 17] = 31, says 'much higher', drift +10
+   vetoes: none (eligible [])
+   tracks [19, 0, 2, 1], tally +1 (+10)
+Round 3: collective 98, personal [28, 17, 24, 19], gap +10; tally +1
+   3 plays [9, 17] = 26, says 'close', drift +2
+   4 plays [10, 11] = 21, says 'close', drift +2
+   1 plays [4, 15, 18] = 37, says 'much higher', drift +9
+   2 plays [16] = 16, says 'much higher' (lie; truth close), drift -1
+   vetoes: 3->1, 4->1 (eligible [2, 3, 4])
+   tracks [19, -1, 4, 3], tally -6 (-7)
+Round 4: collective 79, personal [24, 30, 29, 25], gap -29; tally -6
+   4 plays [5, 14] = 19, says 'lower', drift -6
+   1 plays [12, 12] = 24, says 'close', drift +0
+   2 plays [11, 20] = 31, says 'much lower' (lie; truth close), drift +1
+   3 plays [14, 16] = 30, says 'close', drift +1
+   vetoes: none (eligible [2, 3, 4])
+   tracks [19, 0, 5, -3], tally +19 (+25)
+Round 5: collective 101, personal [27, 22, 18, 27], gap +7; tally +19
+   1 plays [9, 10, 13] = 32, says 'higher', drift +5
+   2 plays [2, 19] = 21, says 'much lower' (lie; truth close), drift -1
+   3 plays [17] = 17, says 'higher' (lie; truth close), drift -1
+   4 plays [3, 4, 5] = 12, says 'much lower', drift -15
+   vetoes: none (eligible [2, 3, 4])
+   tracks [24, -1, 4, -18], tally +0 (-19)
+Round 6: collective 80, personal [25, 18, 26, 20], gap -9; tally +0
+   2 plays [1, 8, 10] = 19, says 'much lower' (lie; truth close), drift +1
+   3 plays [2, 3, 20] = 25, says 'close', drift -1
+   4 plays [2, 3, 4] = 9, says 'much lower', drift -11
+   1 plays [15, 15] = 30, says 'higher', drift +5
+   vetoes: none (eligible [2, 3])
+   tracks [29, 0, 3, -29], tally +3 (+3)
+Round 7  FINAL (x2): collective 77, personal [21, 17, 22, 30], gap -13; tally +3
+   3 plays [7, 12] = 19, says 'close' (lie; truth lower), drift -3
+   4 plays [9, 18] = 27, says 'close' (lie; truth lower), drift -3
+   1 plays [8, 13] = 21, says 'close', drift +0
+   2 plays [18] = 18, says 'much lower' (lie; truth close), drift +1
+   vetoes: none (eligible [2, 3])
+   tracks [29, 2, -3, -35], tally +11 (+8)
+
+Game seed 21001852: solo, winners [4]  (1:careful_drifter, 2:anchor, 3:adaptive, 4:adaptive)
+Round 1: collective 102, personal [18, 16, 19, 22], gap +27; tally +0
+   1 plays [10, 18] = 28, says 'much higher', drift +10
+   2 plays [3, 4, 9] = 16, says 'much higher' (lie; truth close), drift +0
+   3 plays [6, 13] = 19, says 'close', drift +0
+   4 plays [4, 17] = 21, says 'close', drift -1
+   vetoes: none (eligible [])
+   tracks [10, 0, 0, -1], tally -18 (-18)
+Round 2: collective 81, personal [28, 25, 27, 23], gap -22; tally -18
+   2 plays [11, 14] = 25, says 'much lower' (lie; truth close), drift +0
+   3 plays [10, 19] = 29, says 'close', drift +2
+   4 plays [4, 5, 16] = 25, says 'close', drift +2
+   1 plays [9, 9, 15] = 33, says 'higher', drift +5
+   vetoes: none (eligible [2, 3])
+   tracks [15, 0, 2, 1], tally +13 (+31)
+Round 3: collective 77, personal [16, 30, 20, 21], gap -10; tally +13
+   3 plays [7, 8] = 15, says 'close' (lie; truth lower), drift -5
+   4 plays [18] = 18, says 'lower', drift -3
+   1 plays [15] = 15, says 'close', drift -1
+   2 plays [1, 14, 15] = 30, says 'much lower' (lie; truth close), drift +0
+   vetoes: none (eligible [2, 3, 4])
+   tracks [14, 0, -3, -2], tally +14 (+1)
+Round 4: collective 71, personal [26, 20, 22, 24], gap -21; tally +14
+   4 plays [3, 4, 7] = 14, says 'much lower', drift -10
+   1 plays [3, 20] = 23, says 'lower', drift -3
+   2 plays [20] = 20, says 'much lower' (lie; truth close), drift +0
+   3 plays [18] = 18, says 'lower', drift -4
+   vetoes: none (eligible [2, 3, 4])
+   tracks [11, 0, -7, -12], tally +18 (+4)
+Round 5: collective 82, personal [19, 17, 29, 24], gap -7; tally +18
+   1 plays [13] = 13, says 'lower', drift -6
+   2 plays [5, 12] = 17, says 'much lower' (lie; truth close), drift +0
+   3 plays [1, 8, 16] = 25, says 'lower', drift -4
+   4 plays [20] = 20, says 'close' (lie; truth lower), drift -4
+   vetoes: none (eligible [2])
+   tracks [5, 0, -11, -16], tally +11 (-7)
+Round 6: collective 76, personal [28, 26, 25, 17], gap -20; tally +11
+   2 plays [1, 8, 15] = 24, says 'much lower' (lie; truth close), drift -2
+   3 plays [2, 3, 12] = 17, says 'lower' (lie; truth much lower), drift -8
+   4 plays [2] = 2, says 'much lower', drift -15
+   1 plays [6, 11, 16] = 33, says 'higher', drift +5
+   vetoes: none (eligible [1, 2])
+   tracks [10, -2, -19, -31], tally +11 (+0)
