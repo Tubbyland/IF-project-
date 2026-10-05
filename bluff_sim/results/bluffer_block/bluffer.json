@@ -1,0 +1,30 @@
+{
+ "label": "bluffer",
+ "params": {
+  "shadow_gap": 1,
+  "cap": 16,
+  "creep": 5.224,
+  "burst_round": 3,
+  "room_margin": -8.608,
+  "burst_room_margin": 2.672,
+  "creep_lie_rate": 0.0,
+  "burst_lie_rate": 1.0,
+  "burst_claim": 1,
+  "help_weight": 0.959,
+  "card_cost": 0.897,
+  "extreme_cost": 0.0,
+  "veto_threshold": 20.0,
+  "deny_weight": 1.093,
+  "danger_margin": 11,
+  "trust": 1.0
+ },
+ "description": [
+  "Creeps up to 5 a round toward its side, staying 1 behind whoever is furthest from zero and never past 16 before its burst.",
+  "Bursts for the threshold from round 3 (always in the final round), accepting 3 of tally room.",
+  "While creeping, says \"close\" 0% of the time whatever it played.",
+  "When bursting, lies 100% of the time, claiming \"lower\" (or \"higher\") in the opposite direction.",
+  "Gives 96% weight to closing the group gap while creeping.",
+  "Does not save extreme cards for the burst.",
+  "Blocks threats when worth 20+ (weight 1.09, watching anyone within 11 of the threshold)."
+ ]
+}

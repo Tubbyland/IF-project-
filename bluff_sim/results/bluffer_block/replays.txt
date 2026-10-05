@@ -1,0 +1,242 @@
+Game seed 43000129: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 107, personal [24, 21, 27, 20], gap +15; tally +0
+   1 plays [3, 16, 16] = 35, says 'much higher', drift +11
+   2 plays [19] = 19, says 'higher' (lie; truth close), drift -2
+   3 plays [11, 16] = 27, says 'higher' (lie; truth close), drift +0
+   4 plays [20] = 20, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [11, -2, 0, 0], tally -6 (-6)
+Round 2: collective 101, personal [28, 17, 29, 25], gap +2; tally -6
+   2 plays [6, 14] = 20, says 'close' (lie; truth higher), drift +3
+   3 plays [18, 19] = 37, says 'higher' (lie; truth much higher), drift +8
+   4 plays [10, 15] = 25, says 'higher' (lie; truth close), drift +0
+   1 plays [1, 9, 15] = 25, says 'lower', drift -3
+   vetoes: none (eligible [3, 4])
+   tracks [8, 1, 8, 0], tally +0 (+6)
+Round 3: collective 75, personal [26, 27, 19, 29], gap -26; tally +0
+   3 plays [7] = 7, says 'lower' (lie; truth much lower), drift -12
+   4 plays [20] = 20, says 'much lower', drift -9
+   1 plays [8, 9, 10] = 27, says 'lower' (lie; truth close), drift +1
+   2 plays [11, 18] = 29, says 'lower' (lie; truth close), drift +2
+   vetoes: none (eligible [])
+   tracks [9, 3, -4, -9], tally +8 (+8)
+Round 4: collective 76, personal [24, 22, 15, 18], gap -3; tally +8
+   4 plays [15] = 15, says 'lower', drift -3
+   1 plays [2, 6] = 8, says 'lower' (lie; truth much lower), drift -16
+   2 plays [18] = 18, says 'close' (lie; truth lower), drift -4
+   3 plays [17] = 17, says 'close', drift +2
+   vetoes: none (eligible [])
+   tracks [-7, -1, -2, -12], tally -10 (-18)
+Round 5: collective 108, personal [28, 26, 15, 20], gap +19; tally -10
+   1 plays [12, 13] = 25, says 'higher' (lie; truth lower), drift -3
+   2 plays [9, 11, 13] = 33, says 'close' (lie; truth higher), drift +7
+   3 plays [12, 15] = 27, says 'much higher', drift +12
+   4 plays [8, 20] = 28, says 'much higher', drift +8
+   vetoes: none (eligible [2, 3])
+   tracks [-10, 6, 10, -4], tally -5 (+5)
+Round 6: collective 100, personal [19, 21, 30, 16], gap +14; tally -5
+   2 plays [7, 14] = 21, says 'lower' (lie; truth close), drift +0
+   3 plays [10, 12, 19] = 41, says 'higher' (lie; truth much higher), drift +11
+   4 plays [7, 18] = 25, says 'much higher', drift +9
+   1 plays [5] = 5, says 'higher' (lie; truth much lower), drift -14
+   vetoes: none (eligible [])
+   tracks [-24, 6, 21, 5], tally -13 (-8)
+Round 7  FINAL (x2): collective 74, personal [30, 18, 17, 22], gap -13; tally -13
+   3 plays [6, 11] = 17, says 'close', drift +0
+   4 plays [10, 13] = 23, says 'close', drift +1
+   1 plays [3, 20] = 23, says 'higher' (lie; truth lower), drift -7
+   2 plays [17] = 17, says 'higher' (lie; truth close), drift -1
+   vetoes: none (eligible [2, 4])
+   tracks [-38, 4, 21, 7], tally -7 (+6)
+
+Game seed 43000130: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 103, personal [22, 15, 21, 26], gap +19; tally +0
+   1 plays [8, 9, 16] = 33, says 'much higher', drift +11
+   2 plays [15] = 15, says 'higher' (lie; truth close), drift +0
+   3 plays [9, 14] = 23, says 'lower' (lie; truth close), drift +2
+   4 plays [13, 16] = 29, says 'close' (lie; truth higher), drift +3
+   vetoes: none (eligible [])
+   tracks [11, 0, 2, 3], tally -3 (-3)
+Round 2: collective 77, personal [24, 25, 20, 16], gap -8; tally -3
+   2 plays [11, 11] = 22, says 'close' (lie; truth lower), drift -3
+   3 plays [18] = 18, says 'higher' (lie; truth close), drift -2
+   4 plays [12] = 12, says 'close' (lie; truth lower), drift -4
+   1 plays [3, 13] = 16, says 'much lower', drift -8
+   vetoes: none (eligible [2])
+   tracks [3, -3, 0, -1], tally -12 (-9)
+Round 3: collective 108, personal [30, 17, 26, 30], gap +5; tally -12
+   3 plays [14, 20] = 34, says 'much higher', drift +8
+   4 plays [16, 19] = 35, says 'close' (lie; truth higher), drift +5
+   1 plays [2, 5, 6] = 13, says 'lower' (lie; truth much lower), drift -17
+   2 plays [7, 8, 10] = 25, says 'higher' (lie; truth much higher), drift +8
+   vetoes: none (eligible [])
+   tracks [-14, 5, 8, 4], tally -13 (-1)
+Round 4: collective 75, personal [17, 29, 15, 25], gap -11; tally -13
+   4 plays [13, 15] = 28, says 'close' (lie; truth higher), drift +3
+   1 plays [1] = 1, says 'higher' (lie; truth much lower), drift -16
+   2 plays [9, 20] = 29, says 'lower' (lie; truth close), drift +0
+   3 plays [17] = 17, says 'close', drift +2
+   vetoes: none (eligible [4])
+   tracks [-30, 5, 10, 7], tally -13 (+0)
+
+Game seed 43000132: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 75, personal [15, 19, 23, 22], gap -4; tally +0
+   1 plays [12] = 12, says 'lower', drift -3
+   2 plays [9, 10] = 19, says 'close', drift +0
+   3 plays [13, 13] = 26, says 'close' (lie; truth higher), drift +3
+   4 plays [16] = 16, says 'lower', drift -6
+   vetoes: none (eligible [])
+   tracks [-3, 0, 3, -6], tally -2 (-2)
+Round 2: collective 82, personal [21, 20, 29, 21], gap -9; tally -2
+   2 plays [15] = 15, says 'close' (lie; truth lower), drift -5
+   3 plays [13, 15] = 28, says 'higher' (lie; truth close), drift -1
+   4 plays [17] = 17, says 'close' (lie; truth lower), drift -4
+   1 plays [11] = 11, says 'much lower', drift -10
+   vetoes: none (eligible [])
+   tracks [-13, -5, 2, -10], tally -13 (-11)
+Round 3: collective 100, personal [28, 18, 25, 24], gap +5; tally -13
+   3 plays [15, 17] = 32, says 'higher', drift +7
+   4 plays [11, 19] = 30, says 'close' (lie; truth higher), drift +6
+   1 plays [4, 20] = 24, says 'higher' (lie; truth lower), drift -4
+   2 plays [7, 18] = 25, says 'higher', drift +7
+   vetoes: none (eligible [3])
+   tracks [-17, 2, 9, -4], tally -2 (+11)
+Round 4: collective 81, personal [30, 30, 26, 19], gap -24; tally -2
+   4 plays [9] = 9, says 'much lower', drift -10
+   1 plays [17] = 17, says 'higher' (lie; truth much lower), drift -13
+   2 plays [8, 18] = 26, says 'lower', drift -4
+   3 plays [10, 14] = 24, says 'close', drift -2
+   vetoes: 2->4, 4->1 (eligible [2, 4])
+   tracks [-17, -2, 7, -4], tally -7 (-5)
+Round 5: collective 102, personal [17, 16, 24, 26], gap +19; tally -7
+   1 plays [18] = 18, says 'higher' (lie; truth close), drift +1
+   2 plays [7, 20] = 27, says 'higher' (lie; truth much higher), drift +11
+   3 plays [19, 20] = 39, says 'much higher', drift +15
+   4 plays [16, 16] = 32, says 'higher', drift +6
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-16, 9, 22, 2], tally +7 (+14)
+Round 6: collective 80, personal [29, 15, 25, 17], gap -6; tally +7
+   2 plays [11] = 11, says 'close' (lie; truth lower), drift -4
+   3 plays [4, 6, 12] = 22, says 'close' (lie; truth lower), drift -3
+   4 plays [11] = 11, says 'much lower' (lie; truth lower), drift -6
+   1 plays [14] = 14, says 'higher' (lie; truth much lower), drift -15
+   vetoes: 2->1, 4->1 (eligible [2, 4])
+   tracks [-16, 5, 19, -4], tally +0 (-7)
+Round 7  FINAL (x2): collective 70, personal [16, 27, 23, 20], gap -16; tally +0
+   3 plays [4, 6] = 10, says 'lower' (lie; truth much lower), drift -13
+   4 plays [14] = 14, says 'lower', drift -6
+   1 plays [8] = 8, says 'higher' (lie; truth much lower), drift -8
+   2 plays [7, 17] = 24, says 'close' (lie; truth lower), drift -3
+   vetoes: 2->4 (eligible [2, 4])
+   tracks [-32, -1, -7, -4], tally -14 (-14)
+
+Game seed 43000134: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 103, personal [21, 29, 26, 18], gap +9; tally +0
+   1 plays [11, 18] = 29, says 'much higher', drift +8
+   2 plays [6, 12, 12] = 30, says 'lower' (lie; truth close), drift +1
+   3 plays [11, 16] = 27, says 'lower' (lie; truth close), drift +1
+   4 plays [7, 15] = 22, says 'close' (lie; truth higher), drift +4
+   vetoes: none (eligible [])
+   tracks [8, 1, 1, 4], tally +5 (+5)
+Round 2: collective 107, personal [24, 19, 28, 22], gap +14; tally +5
+   2 plays [6, 17] = 23, says 'higher', drift +4
+   3 plays [5, 7, 12] = 24, says 'close' (lie; truth lower), drift -4
+   4 plays [6, 17] = 23, says 'close', drift +1
+   1 plays [5, 9, 10] = 24, says 'close', drift +0
+   vetoes: none (eligible [])
+   tracks [8, 5, -3, 5], tally -8 (-13)
+Round 3: collective 108, personal [19, 21, 20, 15], gap +33; tally -8
+   3 plays [4, 8, 18] = 30, says 'higher' (lie; truth much higher), drift +10
+   4 plays [10, 19] = 29, says 'higher' (lie; truth much higher), drift +14
+   1 plays [2, 19, 20] = 41, says 'lower' (lie; truth much higher), drift +22
+   2 plays [13, 18] = 31, says 'higher' (lie; truth much higher), drift +10
+   vetoes: none (eligible [])
+   tracks [30, 15, 7, 19], tally +15 (+23)
+
+Game seed 43000136: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 101, personal [21, 15, 28, 16], gap +21; tally +0
+   1 plays [7, 15, 18] = 40, says 'much higher', drift +19
+   2 plays [16] = 16, says 'close', drift +1
+   3 plays [8, 9, 12] = 29, says 'close', drift +1
+   4 plays [19] = 19, says 'close' (lie; truth higher), drift +3
+   vetoes: none (eligible [])
+   tracks [19, 1, 1, 3], tally +3 (+3)
+Round 2: collective 73, personal [29, 27, 17, 30], gap -30; tally +3
+   2 plays [10] = 10, says 'much lower', drift -17
+   3 plays [7] = 7, says 'much lower', drift -10
+   4 plays [15, 16] = 31, says 'close', drift +1
+   1 plays [1, 2, 17] = 20, says 'much lower', drift -9
+   vetoes: 3->2, 4->2 (eligible [2, 3, 4])
+   tracks [10, 1, -9, 4], tally +15 (+12)
+Round 3: collective 72, personal [23, 26, 19, 23], gap -19; tally +15
+   3 plays [6] = 6, says 'lower' (lie; truth much lower), drift -13
+   4 plays [13] = 13, says 'lower' (lie; truth much lower), drift -10
+   1 plays [4, 19] = 23, says 'lower' (lie; truth close), drift +0
+   2 plays [16] = 16, says 'lower' (lie; truth much lower), drift -10
+   vetoes: none (eligible [])
+   tracks [10, -9, -22, -6], tally +1 (-14)
+Round 4: collective 70, personal [21, 30, 27, 22], gap -30; tally +1
+   4 plays [9] = 9, says 'lower' (lie; truth much lower), drift -13
+   1 plays [6, 16] = 22, says 'lower' (lie; truth close), drift +1
+   2 plays [20] = 20, says 'lower' (lie; truth much lower), drift -10
+   3 plays [10, 12] = 22, says 'lower', drift -5
+   vetoes: 2->3, 4->2 (eligible [1, 2, 4])
+   tracks [11, -9, -22, -19], tally +4 (+3)
+Round 5: collective 80, personal [20, 29, 26, 24], gap -19; tally +4
+   1 plays [4, 13] = 17, says 'lower', drift -3
+   2 plays [8, 11] = 19, says 'much lower', drift -10
+   3 plays [20] = 20, says 'close' (lie; truth lower), drift -6
+   4 plays [10, 13] = 23, says 'close', drift -1
+   vetoes: 2->3 (eligible [1, 2])
+   tracks [8, -19, -22, -20], tally +3 (-1)
+Round 6: collective 79, personal [22, 20, 19, 18], gap +0; tally +3
+   2 plays [6, 11] = 17, says 'close' (lie; truth lower), drift -3
+   3 plays [7, 7] = 14, says 'close' (lie; truth lower), drift -5
+   4 plays [17] = 17, says 'higher' (lie; truth close), drift -1
+   1 plays [17, 18] = 35, says 'lower' (lie; truth much higher), drift +13
+   vetoes: none (eligible [1])
+   tracks [21, -22, -27, -21], tally +7 (+4)
+Round 7  FINAL (x2): collective 106, personal [17, 24, 25, 25], gap +15; tally +7
+   3 plays [5, 20] = 25, says 'lower' (lie; truth close), drift +0
+   4 plays [8, 20] = 28, says 'close' (lie; truth higher), drift +3
+   1 plays [11, 12] = 23, says 'lower' (lie; truth higher), drift +6
+   2 plays [14, 14] = 28, says 'higher', drift +4
+   vetoes: none (eligible [])
+   tracks [33, -14, -27, -15], tally +5 (-2)
+
+Game seed 43000138: solo, winners [1]  (1:bluffer, 2:tuned, 3:tuned, 4:tuned)
+Round 1: collective 71, personal [30, 24, 16, 22], gap -21; tally +0
+   1 plays [11] = 11, says 'much lower', drift -19
+   2 plays [9, 15] = 24, says 'close', drift +0
+   3 plays [17] = 17, says 'lower' (lie; truth close), drift +1
+   4 plays [7, 18] = 25, says 'higher', drift +3
+   vetoes: none (eligible [])
+   tracks [-19, 0, 1, 3], tally +6 (+6)
+Round 2: collective 106, personal [15, 25, 30, 20], gap +16; tally +6
+   2 plays [11, 19] = 30, says 'higher', drift +5
+   3 plays [13, 20] = 33, says 'higher', drift +3
+   4 plays [20] = 20, says 'close', drift +0
+   1 plays [18] = 18, says 'higher', drift +3
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-16, 5, 4, 3], tally +1 (-5)
+Round 3: collective 99, personal [27, 17, 28, 22], gap +5; tally +1
+   3 plays [15, 15] = 30, says 'lower' (lie; truth close), drift +2
+   4 plays [4, 10, 12] = 26, says 'higher', drift +4
+   1 plays [3, 3, 8] = 14, says 'higher' (lie; truth much lower), drift -13
+   2 plays [19] = 19, says 'lower' (lie; truth close), drift +2
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-29, 7, 6, 7], tally -9 (-10)
+Round 4: collective 104, personal [29, 29, 18, 24], gap +4; tally -9
+   4 plays [6, 6, 9] = 21, says 'lower', drift -3
+   1 plays [13, 18] = 31, says 'higher' (lie; truth close), drift +2
+   2 plays [4, 11, 19] = 34, says 'close' (lie; truth higher), drift +5
+   3 plays [9, 13] = 22, says 'higher', drift +4
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-27, 12, 10, 4], tally -5 (+4)
+Round 5: collective 75, personal [26, 15, 16, 19], gap -1; tally -5
+   1 plays [1, 1, 20] = 22, says 'higher' (lie; truth lower), drift -4
+   2 plays [14] = 14, says 'higher' (lie; truth close), drift -1
+   3 plays [14] = 14, says 'higher' (lie; truth close), drift -2
+   4 plays [16] = 16, says 'much lower' (lie; truth lower), drift -3
+   vetoes: none (eligible [2, 3, 4])
+   tracks [-31, 11, 8, 1], tally -14 (-9)
