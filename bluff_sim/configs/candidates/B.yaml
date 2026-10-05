@@ -1,0 +1,14 @@
+# Shortlist candidate B from results/screen_ranges.
+game:
+  hand_lo: 1
+  hand_hi: 18
+  personal_lo: 10
+  personal_hi: 20
+  collective_mode: continuous
+  collective_continuous: [45, 75]
+  rounds: 5
+  bust_limit: 18
+  win_threshold: 25
+  draw_per_round: 1
+  veto_gap: 8
+seats: [careful_drifter, anchor, adaptive, adaptive]
